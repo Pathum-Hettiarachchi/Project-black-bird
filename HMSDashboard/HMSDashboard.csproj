@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="20180125_001_1_.jpg" />
+    <None Remove="Add User Male.png" />
+    <None Remove="Calendar Plus.png" />
+    <None Remove="Chat Bubble.png" />
+    <None Remove="Coin in Hand.png" />
+    <None Remove="Combo Chart.png" />
+    <None Remove="Group 1.png" />
+    <None Remove="Info.png" />
+    <None Remove="medical-assistance.png" />
+    <None Remove="Sell Stock.png" />
+    <None Remove="Test Results.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="20180125_001_1_.jpg" />
+    <Resource Include="Add User Male.png" />
+    <Resource Include="Calendar Plus.png" />
+    <Resource Include="Chat Bubble.png" />
+    <Resource Include="Coin in Hand.png" />
+    <Resource Include="Combo Chart.png" />
+    <Resource Include="Group 1.png" />
+    <Resource Include="Info.png" />
+    <Resource Include="medical-assistance.png" />
+    <Resource Include="Sell Stock.png" />
+    <Resource Include="Test Results.png" />
+  </ItemGroup>
+
+</Project>
