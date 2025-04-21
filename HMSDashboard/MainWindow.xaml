@@ -1,148 +1,250 @@
 ﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="HMSDashboard.MainWindow"
-        Title="HMS Dashboard" Height="800" Width="1280" Background="White">
+    x:Class="HMSDashboard.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="av"
+    Title="HMS Dashboard"
+    Height="1200"
+    Width="1200"
+    Background="#FFF5F5F7">
+
     <Canvas x:Name="MainCanvas">
+
         <!-- Sidebar -->
-        <StackPanel Background="#FFF5F5F7" Width="200" Canvas.Left="0" Canvas.Top="0" Height="784" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+        <Border Canvas.Left="246" Canvas.Top="65" Width="888" Height="405" Background="White" CornerRadius="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <!-- Sidebar -->
+        <StackPanel Background="#FFF5F5F7"
+                    Width="200"
+                    Canvas.Left="0"
+                    Canvas.Top="0"
+                    Height="784"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
             <Image Height="77" Width="168" Source="/Group 1.png"/>
             <Label Content="Main menu" Width="160" Height="29"/>
             <StackPanel Margin="10">
+                <!-- Dashboard -->
                 <Canvas Height="51" Width="170">
                     <Button Content="Dashboard"
-        Padding="10,5"
-        BorderBrush="{x:Null}"
-        Click="Button_Click"
-        Background="#FFBED3FF"
-        HorizontalAlignment="Center"
-        Canvas.Left="5"
-        Canvas.Top="5"
-        VerticalAlignment="Top"
-        Width="165"
-        Height="36"
-        Cursor="Hand">
-
+                            Padding="10,5"
+                            BorderBrush="{x:Null}"
+                            Click="Button_Click"
+                            Background="#FFBED3FF"
+                            HorizontalAlignment="Center"
+                            Canvas.Left="5"
+                            Canvas.Top="5"
+                            VerticalAlignment="Top"
+                            Width="165"
+                            Height="36"
+                            Cursor="Hand">
                         <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}" 
-                    CornerRadius="6" 
-                    BorderBrush="{TemplateBinding BorderBrush}" 
-                    BorderThickness="{TemplateBinding BorderThickness}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"
+                                        CornerRadius="6"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Image Height="26" Width="28" Source="/Combo Chart.png" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="12" Canvas.Top="8"/>
+                    <Image Height="26" Width="28" Source="/Combo Chart.png"
+                           HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Canvas.Left="12" Canvas.Top="8"/>
                 </Canvas>
+
+                <!-- Patients -->
                 <Canvas Height="51">
                     <Button Content="Patients"
-        Padding="10,5"
-        Canvas.Left="10"
-        Canvas.Top="8"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Width="165"
-        Height="36"
-        Background="#FFBED3FF"
-        BorderBrush="{x:Null}" Click="Button_Click_1" Cursor="Hand">
+                            Padding="10,5"
+                            Canvas.Left="10"
+                            Canvas.Top="8"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Width="165"
+                            Height="36"
+                            Background="#FFE4ECFF"
+                            BorderBrush="{x:Null}"
+                            Click="Button_Click_1"
+                            Cursor="Hand">
                         <Button.Template>
-                            <ControlTemplate TargetType="Button">
+                            <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
-                    CornerRadius="6"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        CornerRadius="6"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Image Height="24" Width="28" Canvas.Left="16" Canvas.Top="14" Source="/Add User Male.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <Image Height="24" Width="28" Canvas.Left="16" Canvas.Top="14"
+                           Source="/Add User Male.png"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"/>
                 </Canvas>
+
+                <!-- Doctors -->
                 <Canvas Height="51">
                     <Button Content="Doctors"
-        Padding="10,5"
-        Canvas.Left="10"
-        Canvas.Top="8"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Top"
-        Width="165"
-        Height="36"
-        Background="#FFBED3FF"
-        BorderBrush="{x:Null}" Cursor="Hand">
+                            Padding="10,5"
+                            Canvas.Left="10"
+                            Canvas.Top="8"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Width="165"
+                            Height="36"
+                            Background="#FFE4ECFF"
+                            BorderBrush="{x:Null}"
+                            Cursor="Hand">
                         <Button.Template>
-                            <ControlTemplate TargetType="Button">
+                            <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
-                    CornerRadius="6"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        CornerRadius="6"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Image Height="28" Width="28" Source="/medical-assistance.png" Canvas.Left="17" Canvas.Top="12" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Image Height="28" Width="28" Source="/medical-assistance.png"
+                           Canvas.Left="17" Canvas.Top="12"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"/>
                 </Canvas>
+
+                <!-- Appointments -->
                 <Canvas Height="51">
                     <Button Content="Appointments"
-        Padding="10,5"
-        Canvas.Left="10"
-        Canvas.Top="7"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Top"
-        Width="165"
-        Height="36"
-        Background="#FFBED3FF"
-        BorderBrush="{x:Null}" Cursor="Hand">
+                            Padding="10,5"
+                            Canvas.Left="10"
+                            Canvas.Top="7"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Width="165"
+                            Height="36"
+                            Background="#FFE4ECFF"
+                            BorderBrush="{x:Null}"
+                            Cursor="Hand">
                         <Button.Template>
-                            <ControlTemplate TargetType="Button">
+                            <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
-                    CornerRadius="6"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        CornerRadius="6"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Image Height="28" Width="29" Canvas.Left="15" Canvas.Top="11" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Calendar Plus.png"/>
-                    <Separator Canvas.Left="10" Canvas.Top="279" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Height="28" Width="29" Canvas.Left="15" Canvas.Top="11"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Source="/Calendar Plus.png"/>
                 </Canvas>
+
+                <!-- Other menu -->
                 <Canvas Height="53">
-                    <Label Content="Other menu" Canvas.Top="17" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="10" FontSize="16" Foreground="#FF3A3939"/>
+                    <Label Content="Other menu"
+                           Canvas.Top="17"
+                           Canvas.Left="10"
+                           FontSize="16"
+                           Foreground="#FF3A3939"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
                 </Canvas>
+
+                <!-- Payments -->
                 <Canvas Height="51">
-                    <Button Content="Payments" Padding="10,5" Canvas.Left="8" Canvas.Top="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="37" Background="#FFE4ECFF" BorderBrush="{x:Null}" Cursor="Hand"/>
-                    <Image Height="28" Width="28" Source="/Coin in Hand.png" Canvas.Left="16" Canvas.Top="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Button Content="Payments"
+                            Padding="10,5"
+                            Canvas.Left="8"
+                            Canvas.Top="7"
+                            Width="164"
+                            Height="37"
+                            Background="#FFE4ECFF"
+                            BorderBrush="{x:Null}"
+                            Cursor="Hand"/>
+                    <Image Height="28" Width="28" Source="/Coin in Hand.png"
+                           Canvas.Left="16" Canvas.Top="12"/>
                 </Canvas>
+
+                <!-- Reports -->
                 <Canvas Height="51">
-                    <Button Content="Reports" Padding="10,5" Canvas.Left="8" Canvas.Top="8" Width="164" Height="36" Background="#FFE4ECFF" BorderBrush="{x:Null}" Cursor="Hand"/>
-                    <Image Height="32" Width="28" Source="/Test Results.png" Canvas.Left="17" Canvas.Top="10"/>
+                    <Button Content="Reports"
+                            Padding="10,5"
+                            Canvas.Left="8"
+                            Canvas.Top="8"
+                            Width="164"
+                            Height="36"
+                            Background="#FFE4ECFF"
+                            BorderBrush="{x:Null}"
+                            Cursor="Hand"/>
+                    <Image Height="32" Width="28" Source="/Test Results.png"
+                           Canvas.Left="17" Canvas.Top="10"/>
                 </Canvas>
+
+                <!-- Inventory -->
                 <Canvas Height="51">
-                    <Button Content="Inventory" Padding="10,5" Canvas.Left="8" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="36" Background="#FFE4ECFF" BorderBrush="{x:Null}" Cursor="Hand"/>
-                    <Image Height="28" Width="28" Source="/Sell Stock.png" Canvas.Left="14" Canvas.Top="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Button Content="Inventory"
+                            Padding="10,5"
+                            Canvas.Left="8"
+                            Canvas.Top="8"
+                            Width="164"
+                            Height="36"
+                            Background="#FFE4ECFF"
+                            BorderBrush="{x:Null}"
+                            Cursor="Hand"/>
+                    <Image Height="28" Width="28" Source="/Sell Stock.png"
+                           Canvas.Left="14" Canvas.Top="12"/>
                 </Canvas>
+
+                <!-- Separator -->
                 <Separator Margin="10 20"/>
+
+                <!-- Chat -->
                 <Canvas Height="51">
-                    <Button Content="Chat" Padding="10,5" Canvas.Left="8" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="36" Background="#FFF3F6FD" BorderBrush="{x:Null}"/>
-                    <Image Height="28" Width="28" Source="/Chat Bubble.png" Canvas.Left="16" Canvas.Top="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Button Content="Chat"
+                            Padding="10,5"
+                            Canvas.Left="8"
+                            Canvas.Top="8"
+                            Width="164"
+                            Height="36"
+                            Background="#FFF3F6FD"
+                            BorderBrush="{x:Null}"/>
+                    <Image Height="28" Width="28" Source="/Chat Bubble.png"
+                           Canvas.Left="16" Canvas.Top="12"/>
                 </Canvas>
+
+                <!-- Help Center -->
                 <Canvas Height="51">
-                    <Button Content="Help Center" Padding="10,5" Canvas.Left="8" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="36" Background="#FFF3F6FD" BorderBrush="{x:Null}"/>
-                    <Image Height="28" Width="28" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="12" Source="/Info.png" Canvas.Left="17"/>
+                    <Button Content="Help Center"
+                            Padding="10,5"
+                            Canvas.Left="8"
+                            Canvas.Top="8"
+                            Width="164"
+                            Height="36"
+                            Background="#FFF3F6FD"
+                            BorderBrush="{x:Null}"/>
+                    <Image Height="28" Width="28" Source="/Info.png"
+                           Canvas.Left="17" Canvas.Top="12"/>
                 </Canvas>
             </StackPanel>
         </StackPanel>
 
         <!-- Top Bar -->
-        <Border Height="60" Background="#FFF5F5F7" Canvas.Left="200" Canvas.Top="0" Width="1080">
-            <TextBlock Text="Pasindu Pathum - Admin" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0" FontWeight="SemiBold"/>
-        </Border>
 
         <!-- Overview Section -->
-        <StackPanel Orientation="Horizontal" Canvas.Left="220" Canvas.Top="80">
+        <StackPanel Orientation="Horizontal" Canvas.Left="332" Canvas.Top="80" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Border Background="#E1E6F9" Width="200" Height="100" Margin="10" CornerRadius="10">
                 <StackPanel Margin="21,36,52,10">
                     <TextBlock Text="456" FontSize="20" FontWeight="Bold"/>
@@ -164,42 +266,113 @@
         </StackPanel>
 
         <!-- Today's Doctors Section -->
-        <StackPanel Canvas.Left="220" Canvas.Top="200">
+        <StackPanel Canvas.Left="288" Canvas.Top="200" HorizontalAlignment="Left" VerticalAlignment="Center">
             <TextBlock Text="Today's Doctors" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
             <StackPanel Orientation="Horizontal">
                 <Border Background="#DDE8FF" Width="180" Height="180" Margin="10" CornerRadius="10">
-                    <TextBlock Text="Dr. Anya Sharma (Cardiology)" TextAlignment="Center" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Dr. Anya Sharma (Cardiology)" TextAlignment="Center" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Border>
                 <Border Background="#DDE8FF" Width="180" Height="180" Margin="10" CornerRadius="10">
-                    <TextBlock Text="Dr. Chloe Davis (Neurology)" TextAlignment="Center" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Dr. Chloe Davis (Neurology)" TextAlignment="Center" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Border>
                 <Border Background="#DDE8FF" Width="180" Height="180" Margin="10" CornerRadius="10">
-                    <TextBlock Text="Dr. Isabella Garcia (General Surgery)" TextAlignment="Center" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Dr. Isabella Garcia (General Surgery)" TextAlignment="Center" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Border>
                 <Border Background="#DDE8FF" Width="180" Height="180" Margin="10" CornerRadius="10">
-                    <TextBlock Text="Dr. Noah Nelson (Pediatrics)" TextAlignment="Center" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Dr. Noah Nelson (Pediatrics)" TextAlignment="Center" FontSize="12"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Border>
             </StackPanel>
         </StackPanel>
 
-        <!-- Patient List (Draggable) -->
+        <!-- Patient List -->
         <StackPanel x:Name="PatientListPanel"
-                    Canvas.Left="220" Canvas.Top="430"
+                    Canvas.Left="252"
+                    Canvas.Top="496"
                     MouseLeftButtonDown="PatientListPanel_MouseLeftButtonDown"
                     MouseMove="PatientListPanel_MouseMove"
-                    MouseLeftButtonUp="PatientListPanel_MouseLeftButtonUp" HorizontalAlignment="Center" Height="264" VerticalAlignment="Top">
-            <TextBlock Text="Patients List" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
-            <DataGrid AutoGenerateColumns="False" Height="250" Width="945" Background="{x:Null}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Patient ID" Binding="{Binding PatientId}"/>
-                    <DataGridTextColumn Header="Patient Name" Binding="{Binding PatientName}"/>
-                    <DataGridTextColumn Header="NIC" Binding="{Binding NIC}"/>
-                    <DataGridTextColumn Header="Date Check In" Binding="{Binding DateCheckIn}"/>
-                    <DataGridTextColumn Header="Disease" Binding="{Binding Disease}"/>
-                    <DataGridTextColumn Header="Blood Type" Binding="{Binding BloodType}"/>
-                    <DataGridTextColumn Header="Bed No" Binding="{Binding BedNo}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+                    MouseLeftButtonUp="PatientListPanel_MouseLeftButtonUp"
+                    HorizontalAlignment="Left"
+                    Height="264"
+                    VerticalAlignment="Center">
+            <Border Width="888" Height="263" Background="White" CornerRadius="40">
+                <StackPanel Margin="20" Background="White" >
+                    <!-- Heading -->
+                    <TextBlock Text="Patients List"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Foreground="Black"
+                   Margin="0,0,0,10"/>
+
+                    <!-- Paragraph under heading -->
+                    <TextBlock Text=" recent patients ."
+                   FontSize="14"
+                   Foreground="Black"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,20" RenderTransformOrigin="0.559,0.49"/>
+
+                    <!-- DataGrid for recent patients -->
+                    <DataGrid x:Name="RecentPatientsDataGrid"
+                  AutoGenerateColumns="True"
+                  HeadersVisibility="Column"
+                  GridLinesVisibility="None"
+                  BorderThickness="0"
+                  RowHeaderWidth="0"
+                  CanUserAddRows="False"
+                  CanUserResizeRows="False"
+                  CanUserResizeColumns="False"
+                  CanUserReorderColumns="False"
+                  IsReadOnly="True"
+                  Background="White"
+                  Foreground="Black"
+                  FontSize="14"
+                  RowBackground="White"
+                  AlternatingRowBackground="#FFF5F5F5"
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Hidden"
+                  Margin="0"
+                  Height="134"
+                  Loaded="Window_Loaded" Width="804">
+
+                        <DataGrid.Resources>
+                            <!-- Header style -->
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FFE4ECFF"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Padding" Value="10"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                            </Style>
+
+                            <!-- Row style -->
+                            <Style TargetType="{x:Type DataGridRow}">
+                                <Setter Property="Margin" Value="2"/>
+                                <Setter Property="Padding" Value="8"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                            </Style>
+                        </DataGrid.Resources>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
+
         </StackPanel>
+        <Border Canvas.Left="929"
+                Width="149" Height="54"
+                Background="white" CornerRadius="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                <Ellipse Width="30" Height="30" Fill="Gray"/>
+                <StackPanel Margin="5,0,0,0">
+                    <TextBlock Text="Pasindu Path.." FontWeight="Bold"/>
+                    <TextBlock Text="Admin" FontSize="10"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
     </Canvas>
 </Window>
