@@ -55,6 +55,189 @@
                     <Image Height="26" Width="28" Source="/Combo Chart.png" Canvas.Left="12" Canvas.Top="8"/>
                 </Canvas>
                 <!-- Add other menu items similarly -->
+
+                <!-- Patients -->
+                <Canvas Height="51">
+                    <Button Content="Patients"
+             Padding="10,5"
+             Canvas.Left="10"
+             Canvas.Top="8"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             Width="165"
+             Height="36"
+             Background="#FFBED3FF"
+             BorderBrush="{x:Null}"
+             Click="Button_Click_1"
+             Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"
+                         CornerRadius="6"
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Image Height="24" Width="28" Canvas.Left="16" Canvas.Top="14"
+            Source="/Add User Male.png"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"/>
+                </Canvas>
+
+                <!-- Doctors -->
+                <Canvas Height="51">
+                    <Button Content="Doctors"
+             Padding="10,5"
+             Canvas.Left="10"
+             Canvas.Top="8"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Top"
+             Width="165"
+             Height="36"
+             Background="#FFE4ECFF"
+             BorderBrush="{x:Null}"
+             Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"
+                         CornerRadius="6"
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Image Height="28" Width="28" Source="/medical-assistance.png"
+            Canvas.Left="17" Canvas.Top="12"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"/>
+                </Canvas>
+
+                <!-- Appointments -->
+                <Canvas Height="51">
+                    <Button Content="Appointments"
+             Padding="10,5"
+             Canvas.Left="10"
+             Canvas.Top="7"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Width="165"
+             Height="36"
+             Background="#FFE4ECFF"
+             BorderBrush="{x:Null}"
+             Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"
+                         CornerRadius="6"
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Image Height="28" Width="29" Canvas.Left="15" Canvas.Top="11"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Source="/Calendar Plus.png"/>
+                </Canvas>
+
+                <!-- Other menu -->
+                <Canvas Height="53">
+                    <Label Content="Other menu"
+            Canvas.Top="17"
+            Canvas.Left="10"
+            FontSize="16"
+            Foreground="#FF3A3939"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+                </Canvas>
+
+                <!-- Payments -->
+                <Canvas Height="51">
+                    <Button Content="Payments"
+             Padding="10,5"
+             Canvas.Left="8"
+             Canvas.Top="7"
+             Width="164"
+             Height="37"
+             Background="#FFE4ECFF"
+             BorderBrush="{x:Null}"
+             Cursor="Hand"/>
+                    <Image Height="28" Width="28" Source="/Coin in Hand.png"
+            Canvas.Left="16" Canvas.Top="12"/>
+                </Canvas>
+
+                <!-- Reports -->
+                <Canvas Height="51">
+                    <Button Content="Reports"
+             Padding="10,5"
+             Canvas.Left="8"
+             Canvas.Top="8"
+             Width="164"
+             Height="36"
+             Background="#FFE4ECFF"
+             BorderBrush="{x:Null}"
+             Cursor="Hand"/>
+                    <Image Height="32" Width="28" Source="/Test Results.png"
+            Canvas.Left="17" Canvas.Top="10"/>
+                </Canvas>
+
+                <!-- Inventory -->
+                <Canvas Height="51">
+                    <Button Content="Inventory"
+             Padding="10,5"
+             Canvas.Left="8"
+             Canvas.Top="8"
+             Width="164"
+             Height="36"
+             Background="#FFE4ECFF"
+             BorderBrush="{x:Null}"
+             Cursor="Hand"/>
+                    <Image Height="28" Width="28" Source="/Sell Stock.png"
+            Canvas.Left="14" Canvas.Top="12"/>
+                </Canvas>
+
+                <!-- Separator -->
+                <Separator Margin="10 20"/>
+
+                <!-- Chat -->
+                <Canvas Height="51">
+                    <Button Content="Chat"
+             Padding="10,5"
+             Canvas.Left="8"
+             Canvas.Top="8"
+             Width="164"
+             Height="36"
+             Background="#FFF3F6FD"
+             BorderBrush="{x:Null}"/>
+                    <Image Height="28" Width="28" Source="/Chat Bubble.png"
+            Canvas.Left="16" Canvas.Top="12"/>
+                </Canvas>
+
+                <!-- Help Center -->
+                <Canvas Height="51">
+                    <Button Content="Help Center"
+             Padding="10,5"
+             Canvas.Left="8"
+             Canvas.Top="8"
+             Width="164"
+             Height="36"
+             Background="#FFF3F6FD"
+             BorderBrush="{x:Null}"/>
+                    <Image Height="28" Width="28" Source="/Info.png"
+            Canvas.Left="17" Canvas.Top="12"/>
+                </Canvas>
+
+
             </StackPanel>
         </StackPanel>
 
