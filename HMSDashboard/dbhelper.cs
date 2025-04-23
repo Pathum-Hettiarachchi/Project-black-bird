@@ -117,9 +117,9 @@ public class dbHelper
     
     
     // get patient data by NIC
-    public (bool found, string fullName, string gender, string age, string address, string bloodType, string status, BitmapImage profileImage) GetPatientDataByNic(string nic)
+    public (bool found, string fullName, string gender, string age, string address, string bloodType, string status, BitmapImage profileImage,DateTime checkInDate,string Disease) GetPatientDataByNic(string nic)
 {
-    string query = "SELECT FullName, NIC, Gender, Age, Address, BloodType, ProfilePhoto, Status FROM patients WHERE NIC = @NIC";
+    string query = "SELECT FullName, NIC, Gender, Age, Address, BloodType, ProfilePhoto, Status,checkInDate,Disease FROM patients WHERE NIC = @NIC";
 
     try
     {
@@ -140,6 +140,9 @@ public class dbHelper
                         string address = reader["Address"]?.ToString() ?? "null";
                         string bloodType = reader["BloodType"]?.ToString() ?? "null";
                         string status = reader["Status"]?.ToString() ?? "null";
+                        DateTime checkInDate = Convert.ToDateTime(reader["CheckInDate"]);
+                        string disease = reader["Disease"]?.ToString() ?? "null";
+
 
                         BitmapImage profileImage = null;
                         if (reader["ProfilePhoto"] != DBNull.Value)
@@ -161,11 +164,11 @@ public class dbHelper
                             profileImage = new BitmapImage(new Uri("pack://application:,,,/20180125_001_1_.jpg"));
                         }
 
-                        return (true, fullName, gender, age, address, bloodType, status, profileImage);
+                        return (true, fullName, gender, age, address, bloodType, status, profileImage,checkInDate,disease);
                     }
                     else
                     {
-                        return (false, null, null, null, null, null, null, null);
+                        return (false, null, null, null, null, null, null, null,DateTime.MinValue,null);
                     }
                 }
             }
@@ -174,7 +177,7 @@ public class dbHelper
     catch (Exception ex)
     {
         MessageBox.Show("Error fetching patient data: " + ex.Message);
-        return (false, null, null, null, null, null, null, null);
+        return (false, null, null, null, null, null, null, null,DateTime.MinValue,null);
     }
 }
     
@@ -219,6 +222,44 @@ public class dbHelper
             MessageBox.Show("An error occurred while admitting the patient:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
+    
+    
+    // patient discharge by nic
+    
+    public void DischargePatientByNic(string nic, DateTime checkInDate, string status)
+    {
+        string query = "UPDATE patients SET BedNo = NULL, Disease = NULL, CheckInDate = @CheckInDate, Status = @Status WHERE NIC = @NIC";
+
+        try
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@CheckInDate", checkInDate);
+                    cmd.Parameters.AddWithValue("@Status", status);
+                    cmd.Parameters.AddWithValue("@NIC", nic);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Patient discharged successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Discharge failed. NIC not found or already discharged.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("An error occurred while discharging the patient:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
 
     
     

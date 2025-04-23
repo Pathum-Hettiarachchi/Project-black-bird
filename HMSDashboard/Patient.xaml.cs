@@ -23,10 +23,12 @@ namespace HMSDashboard
 
         private void findPatient(object sender, RoutedEventArgs e)
         {
-            string nic = searchBox.Text.Trim(); 
-            PatientAdmit patientAdmit = new PatientAdmit(nic);  // Pass NIC here
-            patientAdmit.Show();
+            string nic = searchBox.Text.Trim();
+            // PatientAdmit patientAdmit = new PatientAdmit(nic);  // Pass NIC here
+            //patientAdmit.Show();
 
+            DischargePatient dischargePatient = new DischargePatient(nic);
+            dischargePatient.Show();
 
         }
 
