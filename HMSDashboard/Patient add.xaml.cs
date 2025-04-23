@@ -107,7 +107,6 @@ namespace HMSDashboard
 
             FullNameTextBox.Text = "";
                 NICTextBox.Text = "";
-                CheckInDatePicker.SelectedDate = null;
                 DiseaseTextBox.Text = "";
                 BloodTypeTextBox.Text = "";
                 BedNoTextBox.Text = "";
@@ -149,10 +148,7 @@ namespace HMSDashboard
             BitmapImage bitmap = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
             ProfileImage.Source = bitmap;
         }
-
-
-
-
+        
     }
     }
 

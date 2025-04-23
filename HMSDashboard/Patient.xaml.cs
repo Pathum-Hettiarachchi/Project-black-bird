@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using MySql.Data.MySqlClient;
+
 namespace HMSDashboard
 {
     /// <summary>
@@ -23,14 +25,27 @@ namespace HMSDashboard
 
         private void findPatient(object sender, RoutedEventArgs e)
         {
+            dbHelper findStatus = new dbHelper();
+
             string nic = searchBox.Text.Trim();
-            // PatientAdmit patientAdmit = new PatientAdmit(nic);  // Pass NIC here
-            //patientAdmit.Show();
+            string status = findStatus.GetPatientStatusByNIC(nic);
 
-            DischargePatient dischargePatient = new DischargePatient(nic);
-            dischargePatient.Show();
+            if (status == "Discharged")
+            {
+                PatientAdmit admit = new PatientAdmit(nic);
+                admit.Show();
+            }
+            else if (status == "Admitted")
+            {
+                DischargePatient discharge = new DischargePatient(nic);
+                discharge.Show();
+            }
 
+           
+
+            
         }
+
 
         private void newPatient(object sender, RoutedEventArgs e)
         {

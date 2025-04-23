@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using MySql.Data.MySqlClient;
@@ -259,6 +260,68 @@ public class dbHelper
             MessageBox.Show("An error occurred while discharging the patient:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
+    
+    
+    
+    //  GetPatientStatusByNIC-----
+    public string GetPatientStatusByNIC(string nic)
+{
+    // Validate NIC with regex: 12 digits or 9 digits + 'V' or 'v'
+    if (!Regex.IsMatch(nic, @"^(\d{12}|\d{9}[vV])$"))
+    {
+        MessageBox.Show("Invalid NIC format.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+        return null;
+    }
+
+    string connectionString = "server=localhost;database=hsm;uid=root;pwd=;";
+    string query = "SELECT Status FROM patients WHERE NIC = @NIC";
+
+    try
+    {
+        using (MySqlConnection conn = new MySqlConnection(connectionString))
+        {
+            conn.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@NIC", nic);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string status = reader["Status"].ToString();
+
+                        if (status == "Discharged")
+                        {
+                            return "Discharged";
+                        }
+                        else if (status == "Admitted")
+                        {
+                            return "Admitted";
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Unknown status '{status}' for this patient.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No patient found with that NIC. Please create a new record.", "Not Found", MessageBoxButton.OK, MessageBoxImage.Information);
+                        return null;
+                    }
+                }
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Error while searching patient: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        return null;
+    }
+}
+
 
 
     

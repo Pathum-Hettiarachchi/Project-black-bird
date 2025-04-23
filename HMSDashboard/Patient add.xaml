@@ -270,14 +270,14 @@
                 <Label Content="NIC" Canvas.Left="500" Canvas.Top="19" Foreground="#FF282AE4"/>
                 <TextBox x:Name="NICTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Canvas.Left="500" Canvas.Top="50"/>
 
-                <Label Content="Date Check In" Canvas.Left="220" Canvas.Top="95" Foreground="#FF282AE4"/>
-                <DatePicker x:Name="CheckInDatePicker" Width="250" Height="30" Canvas.Left="220" Canvas.Top="126"/>
+                <!--<Label Content="Date Check In" Canvas.Left="220" Canvas.Top="95" Foreground="#FF282AE4"/>
+                <DatePicker x:Name="CheckInDatePicker" Width="250" Height="30" Canvas.Left="220" Canvas.Top="126"/>-->
 
                 <Label Content="Disease" Canvas.Left="500" Canvas.Top="94" Foreground="#FF282AE4"/>
                 <TextBox x:Name="DiseaseTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Canvas.Left="500" Canvas.Top="125"/>
 
                 <Label Content="Blood Type" Canvas.Left="220" Canvas.Top="167" Foreground="#FF282AE4"/>
-                <TextBox x:Name="BloodTypeTextBox" Style="{StaticResource RoundedTextBox}" Width="251" Canvas.Left="220" Canvas.Top="338"/>
+                <TextBox x:Name="BloodTypeTextBox" Style="{StaticResource RoundedTextBox}" Width="251" Canvas.Left="220" Canvas.Top="198"/>
 
                 <Label Content="Bed No" Canvas.Left="500" Canvas.Top="170" Foreground="#FF282AE4"/>
                 <TextBox x:Name="BedNoTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Canvas.Left="500" Canvas.Top="198"/>
@@ -293,7 +293,8 @@
                          Canvas.Left="500" Canvas.Top="271"/>
 
                 <Label Content="City" Canvas.Left="220" Canvas.Top="307" Foreground="#FF282AE4"/>
-                <TextBox x:Name="CityTextBox" Style="{StaticResource RoundedTextBox}" Width="251" Canvas.Left="220" Canvas.Top="198"/>
+                <TextBox x:Name="CityTextBox" Style="{StaticResource RoundedTextBox}" Width="251" Canvas.Left="220" Canvas.Top="338"/>
+                
 
                 <!-- Buttons -->
                 <Button Content="Save" Width="100" Height="35" Canvas.Left="220" Canvas.Top="418"
