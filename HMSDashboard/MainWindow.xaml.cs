@@ -78,6 +78,14 @@ namespace HMSDashboard
             this.Close();
 
         }
+
+        private void AppintmentClick(object sender, RoutedEventArgs e)
+        {
+            Appointments Appointments =new Appointments();
+            Appointments.Show();
+            this.Close();
+
+        }
     }
 
    

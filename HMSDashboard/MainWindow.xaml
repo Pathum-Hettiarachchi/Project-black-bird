@@ -133,6 +133,7 @@
                             Height="36"
                             Background="#FFE4ECFF"
                             BorderBrush="{x:Null}"
+                            Click="AppintmentClick"
                             Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
