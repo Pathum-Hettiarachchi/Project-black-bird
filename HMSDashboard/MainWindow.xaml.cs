@@ -69,9 +69,15 @@ namespace HMSDashboard
             dbHelper db = new dbHelper();
             RecentPatientsDataGrid.ItemsSource = db.GetRecentPatients().DefaultView;
         }
-        
-        
-        
+
+        private void DoctorClick(object sender, RoutedEventArgs e)
+        {
+
+            DoctorAdd addDoctor = new DoctorAdd();
+            addDoctor.Show();
+            this.Close();
+
+        }
     }
 
    

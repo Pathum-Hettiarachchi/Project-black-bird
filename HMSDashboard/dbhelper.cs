@@ -87,6 +87,78 @@ public class dbHelper
     }
     
     
+    
+    
+    public void CreateDoctor(
+    string fullName,
+    string nic,
+    string gender,
+    string age,
+    string phone,
+    string specialization,
+    string qualification,
+    byte[] profilePhoto
+)
+{
+    try
+    {
+        using (MySqlConnection conn = new MySqlConnection(connectionString))
+        {
+            conn.Open();
+
+            // Check if doctor already exists by NIC
+            string checkQuery = "SELECT COUNT(*) FROM doctors WHERE NIC = @NIC";
+            using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+            {
+                checkCmd.Parameters.AddWithValue("@NIC", nic);
+                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    MessageBox.Show("A doctor with this NIC already exists.", "Duplicate Entry", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+            }
+
+            // If NIC does not exist, proceed with insertion
+            string insertQuery = @"
+                INSERT INTO doctors 
+                (FullName, NIC, Gender, Age, Phone, Specialization, Qualification, ProfilePhoto, Status) 
+                VALUES 
+                (@FullName, @NIC, @Gender, @Age, @Phone, @Specialization, @Qualification, @ProfilePhoto, @Status);";
+
+            MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
+
+            insertCmd.Parameters.AddWithValue("@FullName", fullName);
+            insertCmd.Parameters.AddWithValue("@NIC", nic);
+            insertCmd.Parameters.AddWithValue("@Gender", gender);
+            insertCmd.Parameters.AddWithValue("@Age", age);
+            insertCmd.Parameters.AddWithValue("@Phone", phone);
+            insertCmd.Parameters.AddWithValue("@Specialization", specialization);
+            insertCmd.Parameters.AddWithValue("@Qualification", qualification);
+            insertCmd.Parameters.AddWithValue("@ProfilePhoto", profilePhoto ?? (object)DBNull.Value);
+            insertCmd.Parameters.AddWithValue("@Status", "Active");
+
+            int result = insertCmd.ExecuteNonQuery();
+
+            if (result > 0)
+            {
+                MessageBox.Show("Doctor added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Failed to add doctor.", "Failure", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButton.OK, MessageBoxImage.Error);
+    }
+}
+
+    
+    
     public DataTable GetRecentPatients()
     {
         DataTable dataTable = new DataTable();

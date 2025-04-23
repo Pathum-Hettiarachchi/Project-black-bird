@@ -102,7 +102,7 @@
                             Height="36"
                             Background="#FFE4ECFF"
                             BorderBrush="{x:Null}"
-                            Cursor="Hand">
+                            Cursor="Hand" Click="DoctorClick">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
