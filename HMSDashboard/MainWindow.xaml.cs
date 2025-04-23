@@ -51,10 +51,16 @@ namespace HMSDashboard
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Patient_add patientAddWindow = new Patient_add();
+/*         Patient_add patientAddWindow = new Patient_add();
             patientAddWindow.Show();
+            this.Close();*/
+
+            Patient patientDashboard = new Patient();
+            patientDashboard.Show();
             this.Close();
 
+
+         
         }
         
         

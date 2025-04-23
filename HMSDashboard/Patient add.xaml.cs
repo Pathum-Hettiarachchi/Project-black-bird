@@ -13,7 +13,7 @@ namespace HMSDashboard
     {
         string fullName;
         string nic;
-        DateTime? checkInDate;
+        DateTime? checkInDate = DateTime.Now;
         string disease;
         string bloodType;
         string bedNo;
@@ -46,9 +46,14 @@ namespace HMSDashboard
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            
+            string formattedDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+
+
+            
             fullName = FullNameTextBox.Text;
             nic = NICTextBox.Text;
-            checkInDate = CheckInDatePicker.SelectedDate;
             disease = DiseaseTextBox.Text;
             bloodType = BloodTypeTextBox.Text;
             bedNo = BedNoTextBox.Text;
@@ -77,12 +82,7 @@ namespace HMSDashboard
                 MessageBox.Show("NIC format is invalid. Enter either 12 digits or 9 digits followed by 'V'.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
-            if (!checkInDate.HasValue)
-            {
-                MessageBox.Show("Check-In Date is required.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+            
 
             if (string.IsNullOrWhiteSpace(disease))
             {

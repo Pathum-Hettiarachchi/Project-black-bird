@@ -40,19 +40,19 @@
                             VerticalAlignment="Top"
                             Width="165"
                             Height="36"
-                            Cursor="Hand"/>
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Background="{TemplateBinding Background}"
+                            Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}"
                                         CornerRadius="6"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}">
-                                <ContentPresenter HorizontalAlignment="Center"
+                                    <ContentPresenter HorizontalAlignment="Center"
                                                       VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                     <Image Height="26" Width="28" Source="/Combo Chart.png"
                            HorizontalAlignment="Left" VerticalAlignment="Top"
                            Canvas.Left="12" Canvas.Top="8"/>

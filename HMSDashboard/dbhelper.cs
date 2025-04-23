@@ -1,6 +1,8 @@
 using System;
 using System.Data;
+using System.IO;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using MySql.Data.MySqlClient;
 
 public class dbHelper
@@ -45,9 +47,9 @@ public class dbHelper
                 // If NIC does not exist, proceed with insertion
                 string insertQuery = @"
                     INSERT INTO patients 
-                    (FullName, NIC, CheckInDate, Disease, BloodType, BedNo, Gender, Age, Address, City,ProfilePhoto) 
+                    (FullName, NIC, CheckInDate, Disease, BloodType, BedNo, Gender, Age, Address, City,ProfilePhoto,Status) 
                     VALUES 
-                    (@FullName, @NIC, @CheckInDate, @Disease, @BloodType, @BedNo, @Gender, @Age, @Address, @City,@ProfilePhoto);";
+                    (@FullName, @NIC, @CheckInDate, @Disease, @BloodType, @BedNo, @Gender, @Age, @Address, @City,@ProfilePhoto,@Status);";
 
                 MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
 
@@ -62,6 +64,7 @@ public class dbHelper
                 insertCmd.Parameters.AddWithValue("@Address", address);
                 insertCmd.Parameters.AddWithValue("@City", city);
                 insertCmd.Parameters.AddWithValue("@ProfilePhoto", profilePhoto ?? (object)DBNull.Value);
+                insertCmd.Parameters.AddWithValue("@Status","Admitted");
                 
 
                 int result = insertCmd.ExecuteNonQuery();
@@ -109,9 +112,114 @@ public class dbHelper
 
         return dataTable;
     }
+    
+    
+    
+    
+    // get patient data by NIC
+    public (bool found, string fullName, string gender, string age, string address, string bloodType, string status, BitmapImage profileImage) GetPatientDataByNic(string nic)
+{
+    string query = "SELECT FullName, NIC, Gender, Age, Address, BloodType, ProfilePhoto, Status FROM patients WHERE NIC = @NIC";
 
+    try
+    {
+        using (MySqlConnection conn = new MySqlConnection(connectionString))
+        {
+            conn.Open();
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@NIC", nic);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string fullName = reader["FullName"]?.ToString() ?? "null";
+                        string gender = reader["Gender"]?.ToString() ?? "null";
+                        string age = reader["Age"]?.ToString() ?? "null";
+                        string address = reader["Address"]?.ToString() ?? "null";
+                        string bloodType = reader["BloodType"]?.ToString() ?? "null";
+                        string status = reader["Status"]?.ToString() ?? "null";
+
+                        BitmapImage profileImage = null;
+                        if (reader["ProfilePhoto"] != DBNull.Value)
+                        {
+                            byte[] imageBytes = (byte[])reader["ProfilePhoto"];
+                            using (MemoryStream ms = new MemoryStream(imageBytes))
+                            {
+                                BitmapImage bitmap = new BitmapImage();
+                                bitmap.BeginInit();
+                                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                                bitmap.StreamSource = ms;
+                                bitmap.EndInit();
+                                bitmap.Freeze();
+                                profileImage = bitmap;
+                            }
+                        }
+                        else
+                        {
+                            profileImage = new BitmapImage(new Uri("pack://application:,,,/20180125_001_1_.jpg"));
+                        }
+
+                        return (true, fullName, gender, age, address, bloodType, status, profileImage);
+                    }
+                    else
+                    {
+                        return (false, null, null, null, null, null, null, null);
+                    }
+                }
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Error fetching patient data: " + ex.Message);
+        return (false, null, null, null, null, null, null, null);
+    }
+}
     
     
+    
+    
+    // update admit patient
+    
+    public void AdmitPatientByFindNic(string nic, string bedNo, string disease, DateTime checkInDate, string status)
+    {
+        string query = "UPDATE patients SET BedNo = @BedNo, Disease = @Disease, CheckInDate = @CheckInDate, Status = @Status WHERE NIC = @NIC";
+        
+
+        try
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@BedNo", bedNo);
+                    cmd.Parameters.AddWithValue("@Disease", disease);
+                    cmd.Parameters.AddWithValue("@CheckInDate", checkInDate);
+                    cmd.Parameters.AddWithValue("@Status", status);
+                    cmd.Parameters.AddWithValue("@NIC", nic);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Patient admitted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Admit failed. NIC not found or already admitted.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("An error occurred while admitting the patient:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
     
     
 }
