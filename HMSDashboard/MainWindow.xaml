@@ -167,6 +167,7 @@
                 <!-- Payments -->
                 <Canvas Height="51">
                     <Button Content="Payments"
+                            Click="paymentClick"
                             Padding="10,5"
                             Canvas.Left="8"
                             Canvas.Top="7"

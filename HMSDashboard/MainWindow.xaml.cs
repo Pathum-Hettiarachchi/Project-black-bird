@@ -44,9 +44,19 @@ namespace HMSDashboard
             PatientListPanel.ReleaseMouseCapture();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+        // payemet button click
+        private void paymentClick(object sender, RoutedEventArgs e)
         {
 
+            Payment payment = new Payment();
+            payment.Show();
+            this.Close();
+
+        }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
