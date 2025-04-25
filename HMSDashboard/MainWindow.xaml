@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="av"
     Title="HMS Dashboard"
-    Height="1200"
+    Height="1000"
     Width="1200"
     Background="#FFF5F5F7">
 
@@ -235,7 +235,7 @@
                             Width="164"
                             Height="36"
                             Background="#FFF3F6FD"
-                            BorderBrush="{x:Null}"/>
+                            BorderBrush="{x:Null}" Click="Button_Click_2"/>
                     <Image Height="28" Width="28" Source="/Info.png"
                            Canvas.Left="17" Canvas.Top="12"/>
                 </Canvas>

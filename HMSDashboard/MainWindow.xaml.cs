@@ -86,6 +86,13 @@ namespace HMSDashboard
             this.Close();
 
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Loading loadin =new Loading();
+            loadin.Show();
+           
+        }
     }
 
    

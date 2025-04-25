@@ -74,7 +74,9 @@ namespace HMSDashboard
                 }
                 else
                 {
-                    MessageBox.Show("Patient not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Patient not found.Create New User", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Patient_add patientadd = new Patient_add();
+                    patientadd.Show();
                     return;
                 }
             }
