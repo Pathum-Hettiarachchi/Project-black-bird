@@ -66,9 +66,9 @@
              VerticalAlignment="Center"
              Width="165"
              Height="36"
-             Background="#FFBED3FF"
+             Background="#FFE4ECFF"
              BorderBrush="{x:Null}"
-             Click="Button_Click_1"
+             Click="Patient_Click"
              Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
@@ -100,7 +100,7 @@
              Height="36"
              Background="#FFE4ECFF"
              BorderBrush="{x:Null}"
-             Cursor="Hand">
+             Cursor="Hand" Click="Doctor_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
@@ -131,7 +131,7 @@
              Height="36"
              Background="#FFE4ECFF"
              BorderBrush="{x:Null}"
-             Cursor="Hand">
+             Cursor="Hand" Click="Appointment_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
@@ -171,7 +171,7 @@
              Height="37"
              Background="#FFE4ECFF"
              BorderBrush="{x:Null}"
-             Cursor="Hand"/>
+             Cursor="Hand" Click="Payment_Click"/>
                     <Image Height="28" Width="28" Source="/Coin in Hand.png"
             Canvas.Left="16" Canvas.Top="12"/>
                 </Canvas>
@@ -281,9 +281,35 @@
 
                 <Label Content="Blood Type" Canvas.Left="220" Canvas.Top="167" Foreground="#FF282AE4"/>
                 <TextBox x:Name="BloodTypeTextBox" Style="{StaticResource RoundedTextBox}" Width="251" Canvas.Left="220" Canvas.Top="198"/>
+                <Canvas>
 
-                <Label Content="Bed No" Canvas.Left="500" Canvas.Top="170" Foreground="#FF282AE4"/>
-                <TextBox x:Name="BedNoTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Canvas.Left="500" Canvas.Top="198"/>
+                    <!-- CheckBox to toggle Bed No visibility -->
+                    <CheckBox x:Name="IsAdmitPatientCheckBox"
+              Content="Is Admit Patient"
+              Canvas.Left="503"
+              Canvas.Top="160"
+              Checked="ShowBedNoCheckBox_Checked"
+              Unchecked="ShowBedNoCheckBox_Unchecked"
+              Foreground="#FF282AE4" HorizontalAlignment="Left" VerticalAlignment="Center" Width="103"/>
+
+                    <!-- Bed No Label -->
+                    <Label x:Name="BedNoLabel"
+           Content="Bed No"
+           Canvas.Left="500"
+           Canvas.Top="170"
+           Foreground="#FF282AE4"
+           Visibility="Collapsed"/>
+
+                    <!-- Bed No TextBox -->
+                    <TextBox x:Name="BedNoTextBox"
+             Style="{StaticResource RoundedTextBox}"
+             Width="250"
+             Canvas.Left="500"
+             Canvas.Top="198"
+             Visibility="Collapsed"/>
+
+                </Canvas>
+
 
                 <Label Content="Gender" Canvas.Left="220" Canvas.Top="240" Foreground="#FF282AE4"/>
                 <TextBox x:Name="GenderTextBox" Style="{StaticResource RoundedTextBox}" Width="120" Canvas.Left="220" Canvas.Top="271"/>
@@ -304,7 +330,9 @@
                         Background="#5C64F3" Foreground="White" Click="Button_Click_2"/>
                 <Button Content="Clear" Width="100" Height="35" Canvas.Left="330" Canvas.Top="418"
                         Background="#FFB3B3" Foreground="Black" Click="Button_Click_3"/>
-              
+                <Button Content="Back" Width="100" Height="35" Canvas.Left="441" Canvas.Top="418"
+                    Background="#FFB3B3" Foreground="Black" Click="Back_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
             </Canvas>
         </Border>
     </Canvas>

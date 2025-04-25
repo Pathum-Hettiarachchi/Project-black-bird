@@ -141,9 +141,22 @@ namespace HMSDashboard
             DateTime checkInDate = DateTime.Now;
             string status = "Admitted";
 
+            if (string.IsNullOrWhiteSpace(bedNo))
+            {
+                MessageBox.Show("Please enter the Bed Number.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(disease))
+            {
+                MessageBox.Show("Please enter the Disease.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
 
             dbHelper AdmitPatientByFindNic = new dbHelper();
             AdmitPatientByFindNic.AdmitPatientByFindNic(nicValue,bedNo,disease,checkInDate,status);
+            this.Close();
 
             
 

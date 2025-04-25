@@ -22,9 +22,22 @@ public class dbHelper
         string address,
         string city,
         byte[] profilePhoto,
-        string MobileNumber
+        string MobileNumber,
+        bool isAdmitPatient
     )
     {
+
+        string patientStatus;
+        if (isAdmitPatient)
+        {
+
+            patientStatus = "Admitted";
+        }
+        else {
+
+            patientStatus = "Discharged";
+        }
+
         try
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -66,7 +79,7 @@ public class dbHelper
                 insertCmd.Parameters.AddWithValue("@Address", address);
                 insertCmd.Parameters.AddWithValue("@City", city);
                 insertCmd.Parameters.AddWithValue("@ProfilePhoto", profilePhoto ?? (object)DBNull.Value);
-                insertCmd.Parameters.AddWithValue("@Status","Admitted"); 
+                insertCmd.Parameters.AddWithValue("@Status", patientStatus); 
                 insertCmd.Parameters.AddWithValue("@MobileNumber",MobileNumber);
 
 

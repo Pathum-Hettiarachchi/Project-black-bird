@@ -23,6 +23,7 @@ namespace HMSDashboard
         string address;
         string city;
         byte[] profilePhoto;
+        bool isAdmitPatient;
         
         
         public Patient_add()
@@ -37,6 +38,19 @@ namespace HMSDashboard
             this.Close();
 
         }
+
+        private void ShowBedNoCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            BedNoLabel.Visibility = Visibility.Visible;
+            BedNoTextBox.Visibility = Visibility.Visible;
+        }
+
+        private void ShowBedNoCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            BedNoLabel.Visibility = Visibility.Collapsed;
+            BedNoTextBox.Visibility = Visibility.Collapsed;
+        }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -63,7 +77,8 @@ namespace HMSDashboard
             age = AgeTextBox.Text;
             address = AddressTextBox.Text;
             city = CityTextBox.Text;
-            
+            isAdmitPatient = IsAdmitPatientCheckBox.IsChecked==true;
+
             // === Required Field Validations ===
             if (string.IsNullOrWhiteSpace(fullName))
             {
@@ -96,7 +111,7 @@ namespace HMSDashboard
             // Call the function
 
             dbHelper createPatient = new dbHelper();
-            createPatient.CreatePatient(fullName, nic, checkInDate, disease, bloodType, bedNo, gender, age, address, city,profilePhoto,MobileNumber);
+            createPatient.CreatePatient(fullName, nic, checkInDate, disease, bloodType, bedNo, gender, age, address, city,profilePhoto,MobileNumber, isAdmitPatient);
         }
         
         
@@ -151,7 +166,43 @@ namespace HMSDashboard
             BitmapImage bitmap = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
             ProfileImage.Source = bitmap;
         }
-        
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.Show();
+            this.Close();
+        }
+
+        private void Doctor_Click(object sender, RoutedEventArgs e)
+        {
+            DoctorAdd doctorAdd = new DoctorAdd();
+            doctorAdd.Show();
+            this.Close();
+        }
+
+        private void Patient_Click(object sender, RoutedEventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.Show();
+            this.Close();
+        }
+
+        private void Appointment_Click(object sender, RoutedEventArgs e)
+        {
+            Appointments appointment = new Appointments();
+            appointment.Show();
+            this.Close();
+        }
+
+        private void Payment_Click(object sender, RoutedEventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Close();
+        }
+
+ 
     }
     }
 

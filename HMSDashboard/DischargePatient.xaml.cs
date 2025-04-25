@@ -68,6 +68,7 @@ namespace HMSDashboard
 
             dbHelper DischargePatientByFindNic = new dbHelper();
             DischargePatientByFindNic.DischargePatientByNic(nicValue,checkInDate,status);
+            this.Close();
 
         }
     }
