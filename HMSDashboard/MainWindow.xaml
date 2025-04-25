@@ -9,8 +9,8 @@
     Height="1000"
     Width="1200"
     Background="#FFF5F5F7">
-
-    <Canvas x:Name="MainCanvas">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Canvas x:Name="MainCanvas"  Height="1000" Width="1200">
 
         <!-- Sidebar -->
 
@@ -375,5 +375,6 @@
             </StackPanel>
         </Border>
 
-    </Canvas>
+        </Canvas>
+    </ScrollViewer>
 </Window>

@@ -237,34 +237,7 @@
 
         <Canvas Height="100" Canvas.Top="260">
             <!-- New Patient Button -->
-            <Canvas>
-
-                <Button Content="Add New Patient"
-        Padding="10,5"
-        Canvas.Left="249"
-        Canvas.Top="32"
-        Width="182"
-        Height="43"
-        Cursor="Hand"
-        Click="newPatient"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Top">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                    CornerRadius="10"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="0">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                    <Button.Background>
-                        <SolidColorBrush Color="#FFBED3FF"/>
-                    </Button.Background>
-                </Button>
-            </Canvas>
+            <Canvas/>
 
             <!-- Search Box (TextBox) -->
 
@@ -321,49 +294,7 @@
             </TextBox>
 
             <!-- DatePicker -->
-            <DatePicker x:Name="AppointmentDatePicker"
-                        Height="36"
-                        Width="145"
-                        Canvas.Left="558"
-                        Canvas.Top="113"
-                        Padding="10,5"
-                        FontSize="14"
-                        Background="White"
-                        BorderBrush="LightGray"
-                        BorderThickness="1"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Top">
-                <DatePicker.Resources>
-                    <Style TargetType="DatePicker">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="DatePicker">
-                                    <Border Background="{TemplateBinding Background}"
-                                            CornerRadius="8"
-                                            BorderBrush="{TemplateBinding BorderBrush}"
-                                            BorderThickness="{TemplateBinding BorderThickness}">
-                                        <Grid>
-                                            <DatePickerTextBox x:Name="PART_TextBox"
-                                                               Background="Transparent"
-                                                               BorderThickness="0"
-                                                               VerticalContentAlignment="Center"/>
-                                            <Button x:Name="PART_Button"
-                                                    Width="20"
-                                                    HorizontalAlignment="Right"
-                                                    Background="Transparent"
-                                                    BorderBrush="{TemplateBinding BorderBrush}">
-                                                <Path Data="M 0 0 L 4 4 L 8 0 Z"
-                                                      Fill="Gray"
-                                                      Margin="0,10,5,10"/>
-                                            </Button>
-                                        </Grid>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </DatePicker.Resources>
-            </DatePicker>
+            <DatePicker  x:Name="AppointmentDatePicker" Canvas.Left="576" Canvas.Top="120" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="115"/>
 
 
             <!-- Buttons -->
@@ -384,6 +315,7 @@
              Click="findAppointment"
             />
         </Canvas>
+
 
 
         <!-- DataGrid for recent patients -->
