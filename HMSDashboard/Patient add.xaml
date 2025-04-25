@@ -267,6 +267,9 @@
                 <Label Content="Full Name" Canvas.Left="220" Canvas.Top="23" Foreground="#FF282AE4"/>
                 <TextBox x:Name="FullNameTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Canvas.Left="220" Canvas.Top="50"/>
 
+                <Label Content="Mobile" Canvas.Left="220" Canvas.Top="94" Foreground="#FF282AE4" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="MobileNumberTextBox" Style="{StaticResource RoundedTextBox}" Width="251" Canvas.Left="220" Canvas.Top="125" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
                 <Label Content="NIC" Canvas.Left="500" Canvas.Top="19" Foreground="#FF282AE4"/>
                 <TextBox x:Name="NICTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Canvas.Left="500" Canvas.Top="50"/>
 
@@ -294,13 +297,14 @@
 
                 <Label Content="City" Canvas.Left="220" Canvas.Top="307" Foreground="#FF282AE4"/>
                 <TextBox x:Name="CityTextBox" Style="{StaticResource RoundedTextBox}" Width="251" Canvas.Left="220" Canvas.Top="338"/>
-                
+
 
                 <!-- Buttons -->
                 <Button Content="Save" Width="100" Height="35" Canvas.Left="220" Canvas.Top="418"
                         Background="#5C64F3" Foreground="White" Click="Button_Click_2"/>
                 <Button Content="Clear" Width="100" Height="35" Canvas.Left="330" Canvas.Top="418"
                         Background="#FFB3B3" Foreground="Black" Click="Button_Click_3"/>
+              
             </Canvas>
         </Border>
     </Canvas>

@@ -21,7 +21,8 @@ public class dbHelper
         string age,
         string address,
         string city,
-        byte[] profilePhoto
+        byte[] profilePhoto,
+        string MobileNumber
     )
     {
         try
@@ -48,9 +49,9 @@ public class dbHelper
                 // If NIC does not exist, proceed with insertion
                 string insertQuery = @"
                     INSERT INTO patients 
-                    (FullName, NIC, CheckInDate, Disease, BloodType, BedNo, Gender, Age, Address, City,ProfilePhoto,Status) 
+                    (FullName, NIC, CheckInDate, Disease, BloodType, BedNo, Gender, Age, Address, City,ProfilePhoto,Status,MobileNumber) 
                     VALUES 
-                    (@FullName, @NIC, @CheckInDate, @Disease, @BloodType, @BedNo, @Gender, @Age, @Address, @City,@ProfilePhoto,@Status);";
+                    (@FullName, @NIC, @CheckInDate, @Disease, @BloodType, @BedNo, @Gender, @Age, @Address, @City,@ProfilePhoto,@Status,@MobileNumber);";
 
                 MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
 
@@ -65,8 +66,10 @@ public class dbHelper
                 insertCmd.Parameters.AddWithValue("@Address", address);
                 insertCmd.Parameters.AddWithValue("@City", city);
                 insertCmd.Parameters.AddWithValue("@ProfilePhoto", profilePhoto ?? (object)DBNull.Value);
-                insertCmd.Parameters.AddWithValue("@Status","Admitted");
-                
+                insertCmd.Parameters.AddWithValue("@Status","Admitted"); 
+                insertCmd.Parameters.AddWithValue("@MobileNumber",MobileNumber);
+
+
 
                 int result = insertCmd.ExecuteNonQuery();
 

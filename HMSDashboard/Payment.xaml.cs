@@ -16,7 +16,7 @@ namespace HMSDashboard
             AppointmentDatePicker.SelectedDate = DateTime.Today;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void MainWindow_click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
@@ -227,6 +227,27 @@ namespace HMSDashboard
             {
                 MessageBox.Show("Connection Error: " + ex.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void Patient_Click(object sender, RoutedEventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.Show();
+            this.Close();
+        }
+
+        private void Doctor_Click(object sender, RoutedEventArgs e)
+        {
+            DoctorAdd doctorAdd = new DoctorAdd();
+            doctorAdd.Show();
+            this.Close();
+        }
+
+        private void Appointment_Click(object sender, RoutedEventArgs e)
+        {
+            Appointments appointment = new Appointments();
+            appointment.Show();
+            this.Close();
         }
     }
 

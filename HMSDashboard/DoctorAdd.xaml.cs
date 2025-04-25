@@ -124,5 +124,18 @@ namespace HMSDashboard
 
             RemoveProfileImage(null, null);
         }
+        private void Appointment_Click(object sender, RoutedEventArgs e)
+        {
+            Appointments appointment = new Appointments();
+            appointment.Show();
+            this.Close();
+        }
+
+        private void Payment_Click(object sender, RoutedEventArgs e)
+        {
+            Payment payment = new Payment();    
+            payment.Show(); 
+            this.Close();
+        }
     }
 }

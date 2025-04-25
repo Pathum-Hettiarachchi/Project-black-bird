@@ -102,7 +102,7 @@
           Height="36"
           Background="#FFE4ECFF"
           BorderBrush="{x:Null}"
-          Cursor="Hand">
+          Cursor="Hand" Click="Doctor_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
@@ -133,7 +133,7 @@
           Height="36"
           Background="#FFE4ECFF"
           BorderBrush="{x:Null}"
-          Cursor="Hand">
+          Cursor="Hand" Click="Appointment_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
@@ -173,7 +173,7 @@
           Height="37"
           Background="#FFE4ECFF"
           BorderBrush="{x:Null}"
-          Cursor="Hand"/>
+          Cursor="Hand" Click="Payement_Click"/>
                     <Image Height="28" Width="28" Source="/Coin in Hand.png"
          Canvas.Left="16" Canvas.Top="12"/>
                 </Canvas>

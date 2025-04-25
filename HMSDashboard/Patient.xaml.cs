@@ -56,7 +56,25 @@ namespace HMSDashboard
 
         }
 
+        private void Doctor_Click(object sender, RoutedEventArgs e)
+        {
+            DoctorAdd doctorAdd = new DoctorAdd();
+            doctorAdd.Show();
+            this.Close();
+        }
 
+        private void Appointment_Click(object sender, RoutedEventArgs e)
+        {
+            Appointments appointment = new Appointments();
+            appointment.Show();
+            this.Close();
+        }
 
+        private void Payement_Click(object sender, RoutedEventArgs e)
+        {
+            Payment payement = new Payment();
+            payement.Show();
+            this.Close();
+        }
     }
 }

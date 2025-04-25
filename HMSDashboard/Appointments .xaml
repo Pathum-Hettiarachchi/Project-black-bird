@@ -19,7 +19,7 @@
                 <Canvas Height="51" Width="170">
                     <Button Content="Dashboard" Width="165" Height="36" Padding="10,5"
                      Background="#FFE4ECFF" BorderBrush="{x:Null}" Cursor="Hand"
-                     Canvas.Left="5" Canvas.Top="5" Click="Button_Click_1">
+                     Canvas.Left="5" Canvas.Top="5" Click="MainWindow_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}" CornerRadius="6">
@@ -44,7 +44,7 @@
       Height="36"
       Background="#FFE4ECFF"
       BorderBrush="{x:Null}"
-      Click="Button_Click_1"
+      Click="Patient_Click"
       Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
@@ -76,7 +76,7 @@
       Height="36"
       Background="#FFE4ECFF"
       BorderBrush="{x:Null}"
-      Cursor="Hand">
+      Cursor="Hand" Click="Doctor_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}"
@@ -147,7 +147,7 @@
       Height="37"
       Background="#FFE4ECFF"
       BorderBrush="{x:Null}"
-      Cursor="Hand"/>
+      Cursor="Hand" Click="Payement_Click"/>
                     <Image Height="28" Width="28" Source="/Coin in Hand.png"
      Canvas.Left="16" Canvas.Top="12"/>
                 </Canvas>

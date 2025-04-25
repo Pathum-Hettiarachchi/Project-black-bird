@@ -14,6 +14,7 @@ namespace HMSDashboard
         string fullName;
         string nic;
         DateTime? checkInDate = DateTime.Now;
+        string MobileNumber;
         string disease;
         string bloodType;
         string bedNo;
@@ -54,7 +55,8 @@ namespace HMSDashboard
             
             fullName = FullNameTextBox.Text;
             nic = NICTextBox.Text;
-            disease = DiseaseTextBox.Text;
+            MobileNumber= MobileNumberTextBox.Text;
+           disease = DiseaseTextBox.Text;
             bloodType = BloodTypeTextBox.Text;
             bedNo = BedNoTextBox.Text;
             gender = GenderTextBox.Text;
@@ -94,7 +96,7 @@ namespace HMSDashboard
             // Call the function
 
             dbHelper createPatient = new dbHelper();
-            createPatient.CreatePatient(fullName, nic, checkInDate, disease, bloodType, bedNo, gender, age, address, city,profilePhoto);
+            createPatient.CreatePatient(fullName, nic, checkInDate, disease, bloodType, bedNo, gender, age, address, city,profilePhoto,MobileNumber);
         }
         
         
@@ -107,6 +109,7 @@ namespace HMSDashboard
 
             FullNameTextBox.Text = "";
                 NICTextBox.Text = "";
+            MobileNumberTextBox.Text = "";
                 DiseaseTextBox.Text = "";
                 BloodTypeTextBox.Text = "";
                 BedNoTextBox.Text = "";
