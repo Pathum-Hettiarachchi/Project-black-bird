@@ -282,11 +282,11 @@
                 <Label Content="Qualification" Canvas.Left="220" Canvas.Top="240" Foreground="#FF282AE4"/>
                 <TextBox x:Name="QualificationTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Height="105" TextWrapping="Wrap" Canvas.Left="220" Canvas.Top="270"/>
 
-                <Button Content="Save" Width="100" Height="35" Canvas.Left="308" Canvas.Top="417"
-                        Background="#5C64F3" Foreground="White" Click="Button_Click_2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Button Content="Clear" Width="100" Height="35" Canvas.Left="418" Canvas.Top="417"
-                        Background="#FFB3B3" Foreground="Black" Click="Button_Click_3" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            
+                <Button Content="Save" Width="100" Height="35" Canvas.Left="220" Canvas.Top="417"
+                        Background="#5C64F3" Foreground="White" Click="Button_Click_2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button Content="Clear" Width="100" Height="35" Canvas.Left="335" Canvas.Top="417"
+                        Background="#FFB3B3" Foreground="Black" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
             </Canvas>
         </Border>
     </Canvas>
