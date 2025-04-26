@@ -1,0 +1,115 @@
+﻿<Window x:Class="HMSDashboard.PlaceAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HMSDashboard"
+        mc:Ignorable="d"
+        Title="PlaceAppointment"
+        Height="600"
+        Width="500"
+        Background="#FFF5F5F7">
+
+    <Grid>
+        <!-- Patient NIC Label & TextBox -->
+        <StackPanel Margin="40,40,40,0" VerticalAlignment="Top">
+            <TextBlock Text="Patient NIC"
+                       FontSize="14"
+                       FontWeight="SemiBold"
+                       Foreground="#333"
+                       Margin="0,0,0,5"/>
+            <TextBox x:Name="PatientNICTextBox"
+                     Height="36"
+                     Padding="10,5"
+                     Background="White"
+                     BorderBrush="LightGray"
+                     BorderThickness="1"
+                     FontSize="14"
+                     VerticalContentAlignment="Center">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border Background="{TemplateBinding Background}"
+                                            CornerRadius="8"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}">
+                                        <ScrollViewer x:Name="PART_ContentHost"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+        </StackPanel>
+
+        <!-- Appointment Number Box (Centered) -->
+        <Border x:Name="AppointmentNumberBox"
+                Width="239"
+                Height="197"
+                Background="White"
+                CornerRadius="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Padding="20"
+                BorderBrush="#DDD"
+                BorderThickness="1"
+                Margin="129,231,0,0">
+            <TextBlock x:Name="AppointmentDate"
+                       Text="Date"
+                       FontSize="20"
+                       Foreground="#333"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,127,0,0"/>
+        </Border>
+
+        <!-- Appointment Number Display -->
+        <TextBlock x:Name="AppointmentNumberTextBlock"
+                   HorizontalAlignment="Left"
+                   FontSize="50"
+                   FontWeight="Bold"
+                   Height="64"
+                   Margin="256,296,0,0"
+                   TextWrapping="Wrap"
+                   Text="10"
+                   VerticalAlignment="Top"
+                   Width="64" RenderTransformOrigin="2.344,1.716"/>
+
+        <!-- Place Appointment Button -->
+        <Button x:Name="PlaceAppointmentButton"
+                
+                Content="Place Appointment"
+                Padding="10,5"
+                Cursor="Hand"
+                Click="appointmentSaveToDb"
+                Background="#FFBED3FF"
+                Margin="145,124,158,402">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="10"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="DoctorNameTextBox" HorizontalAlignment="Left" Height="30" Margin="145,250,0,0" TextWrapping="Wrap" Text="Doctor Name " FontWeight="Bold" FontSize="20" VerticalAlignment="Top" Width="213"/>
+        <TextBlock x:Name="AppointmentNumberTextBlock_Copy"
+            HorizontalAlignment="Left"
+            FontSize="50"
+            FontWeight="Bold"
+            Height="64"
+            Margin="154,296,0,0"
+            TextWrapping="Wrap"
+            Text="No:o"
+            VerticalAlignment="Top"
+            Width="97" RenderTransformOrigin="2.344,1.716"/>
+    </Grid>
+</Window>
