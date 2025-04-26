@@ -185,7 +185,7 @@ public class dbHelper
             {
                 conn.Open();
 
-                string query = "SELECT * FROM patients ORDER BY CheckInDate DESC LIMIT 10";
+                string query = "SELECT \r\n    FullName, \r\n    NIC,\r\n    BloodType,\r\n    Disease, \r\n    Gender, \r\n    Age, \r\n    MobileNumber, \r\n    BedNo, \r\n    FORMAT(CheckInDate, 'dd/MM/yyyy') AS CheckInDate\r\nFROM \r\n    patients\r\nWHERE \r\n    Status = 'Admitted'\r\nORDER BY \r\n    CheckInDate DESC;\r\n";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))

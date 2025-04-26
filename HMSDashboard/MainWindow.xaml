@@ -437,6 +437,97 @@
 
 
 
+            <!-- Patient List -->
+            <StackPanel x:Name="PatientListPanel"
+            Canvas.Left="252"
+            Canvas.Top="496"
+            HorizontalAlignment="Left"
+            Height="264"
+            VerticalAlignment="Center">
+                <Border Width="888" Height="263" Background="White" CornerRadius="40">
+                    <StackPanel Margin="20" Background="White">
+                        <!-- Heading -->
+                        <TextBlock Text="Patients List"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="Black"
+                       Margin="0,0,0,10"/>
+
+                        <!-- Paragraph under heading -->
+                        <TextBlock Text="recent patients."
+                       FontSize="14"
+                       Foreground="Black"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,20"/>
+
+                        <!-- DataGrid for recent patients -->
+                        <DataGrid x:Name="RecentPatientsDataGrid"
+                                  Padding="10"
+                                
+                      AutoGenerateColumns="True"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      BorderThickness="0"
+                      RowHeaderWidth="0"
+                      CanUserAddRows="False"
+                      CanUserResizeRows="False"
+                      CanUserResizeColumns="False"
+                      CanUserReorderColumns="False"
+                      IsReadOnly="True"
+                      Background="White"
+                      Foreground="Black"
+                      FontSize="14"
+                      RowBackground="White"
+                      AlternatingRowBackground="#FFF5F5F5"
+                      HorizontalScrollBarVisibility="Hidden"
+                      VerticalScrollBarVisibility="Hidden"
+                      Margin="0"
+                      Height="134"
+                      Width="831"
+                      Loaded="On_Loaded"
+                      >
+
+                            <DataGrid.Resources>
+                                <!-- Header style -->
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="#FFE4ECFF"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Padding" Value="10"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+
+                                <!-- Row style -->
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Margin" Value="2"/>
+                                    <Setter Property="Padding" Value="8"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </DataGrid.Resources>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Admin Info -->
+            <Border Canvas.Left="929"
+        Width="149" Height="54"
+        Background="White" CornerRadius="20"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Ellipse Width="30" Height="30" Fill="Gray"/>
+                    <StackPanel Margin="5,0,0,0">
+                        <TextBlock Text="Pasindu Path.." FontWeight="Bold"/>
+                        <TextBlock Text="Admin" FontSize="10"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+
+
+
 
 
 

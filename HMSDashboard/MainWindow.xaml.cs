@@ -91,6 +91,10 @@ namespace HMSDashboard
 
 
 
+            dbHelper db = new dbHelper();
+            RecentPatientsDataGrid.ItemsSource = db.GetRecentPatients().DefaultView;
+
+
         }
 
 
