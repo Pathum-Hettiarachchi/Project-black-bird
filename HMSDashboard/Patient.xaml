@@ -35,6 +35,88 @@
 
     <Canvas Margin="31,0,31,13">
         <!-- Sidebar -->
+        <Border Canvas.Left="229" Canvas.Top="70" Width="650" Height="149" Background="White" CornerRadius="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+
+
+        <!-- Patient List -->
+        <Grid Canvas.Left="210" Canvas.Top="282" Width="801" Height="282" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <StackPanel x:Name="PatientListPanel"
+            Canvas.Left="252"
+            Canvas.Top="496"
+            HorizontalAlignment="Left"
+            Height="264"
+            VerticalAlignment="Center">
+                <Border Width="720" Height="263" Background="White" CornerRadius="40">
+                    <StackPanel Margin="20" Background="White">
+                        <!-- Heading -->
+                        <TextBlock Text="Patients List"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="Black"
+                       Margin="0,0,0,10"/>
+
+                        <!-- Paragraph under heading -->
+                        <TextBlock Text="recent patients."
+                       FontSize="14"
+                       Foreground="Black"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,20"/>
+
+                        <!-- DataGrid for recent patients -->
+                        <DataGrid x:Name="RecentPatientsDataGrid"
+                      AutoGenerateColumns="True"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      BorderThickness="0"
+                      RowHeaderWidth="0"
+                      CanUserAddRows="False"
+                      CanUserResizeRows="False"
+                      CanUserResizeColumns="False"
+                      CanUserReorderColumns="False"
+                      IsReadOnly="True"
+                      Background="White"
+                      Foreground="Black"
+                      FontSize="14"
+                      RowBackground="White"
+                      AlternatingRowBackground="#FFF5F5F5"
+                      HorizontalScrollBarVisibility="Hidden"
+                      VerticalScrollBarVisibility="Hidden"
+                      Margin="0"
+                      Height="134"
+                      Width="804"
+                      Loaded="On_Loaded"
+                      >
+
+                            <DataGrid.Resources>
+                                <!-- Header style -->
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="#FFE4ECFF"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Padding" Value="10"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+
+                                <!-- Row style -->
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Margin" Value="2"/>
+                                    <Setter Property="Padding" Value="8"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </DataGrid.Resources>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <!-- Admin Info -->
+
+
+
+        <!-- Sidebar -->
         <StackPanel Width="200" Height="704" Canvas.Left="0" Canvas.Top="0">
             <Image Height="77" Width="168" Source="/Group 1.png"/>
             <Label Content="Main menu" Width="160" Height="29"/>
@@ -47,7 +129,7 @@
                          Background="#FFE4ECFF" BorderBrush="{x:Null}" Cursor="Hand"
                          Canvas.Left="5" Canvas.Top="5" Click="Button_Click_1">
                         <Button.Template>
-                            <ControlTemplate TargetType="Button">
+                            <ControlTemplate TargetType="{x:Type Button}">
                                 <Border Background="{TemplateBinding Background}" CornerRadius="6">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
@@ -267,16 +349,16 @@
 
                 <Button Content="Add New Patient"
             Padding="10,5"
-            Canvas.Left="687"
+            Canvas.Left="661"
             Canvas.Top="-144"
             Width="182"
             Height="43"
             Cursor="Hand"
             Click="newPatient"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top">
+            VerticalAlignment="Center" Background="#FFBED3FF">
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="{TemplateBinding Background}"
                         CornerRadius="10"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -286,16 +368,13 @@
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
-                    <Button.Background>
-                        <SolidColorBrush Color="#FFBED3FF"/>
-                    </Button.Background>
                 </Button>
             </Canvas>
 
             <!-- Search Box (TextBox) -->
             <Canvas>
                 <TextBox x:Name="searchBox"
-                                 Canvas.Left="248"
+                                 Canvas.Left="254"
                                  Canvas.Top="-141"
                                  Width="180"
                                  Height="43"
@@ -306,10 +385,10 @@
                                  VerticalContentAlignment="Center"
                                  FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <TextBox.Style>
-                        <Style TargetType="TextBox">
+                        <Style TargetType="{x:Type TextBox}">
                             <Setter Property="Template">
                                 <Setter.Value>
-                                    <ControlTemplate TargetType="TextBox">
+                                    <ControlTemplate TargetType="{x:Type TextBox}">
                                         <Border Background="{TemplateBinding Background}"
                                     CornerRadius="10"
                                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -326,15 +405,15 @@
                 <!-- Find Button -->
                 <Button Content="Find Patient"
             Padding="10,5"
-            Canvas.Left="442"
+            Canvas.Left="448"
             Canvas.Top="-141"
             Width="103"
             Height="43"
             Cursor="Hand"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center" Click="findPatient">
+            VerticalAlignment="Center" Click="findPatient" Background="#FFBED3FF">
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="{TemplateBinding Background}"
                         CornerRadius="10"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -344,9 +423,6 @@
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
-                    <Button.Background>
-                        <SolidColorBrush Color="#FFBED3FF"/>
-                    </Button.Background>
                 </Button>
             </Canvas>
         </Canvas>

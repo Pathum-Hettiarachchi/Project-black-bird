@@ -15,6 +15,19 @@ namespace HMSDashboard
 
 
 
+
+        //On_Loaded funcrion
+        private void On_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            dbHelper db = new dbHelper();
+            RecentPatientsDataGrid.ItemsSource = db.GetRecentPatients().DefaultView;
+
+
+        }
+
+
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
