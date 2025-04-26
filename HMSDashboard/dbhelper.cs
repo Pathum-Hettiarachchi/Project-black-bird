@@ -412,6 +412,35 @@ public class dbHelper
 
 
 
-    
-    
+    // Generic method to execute COUNT(*) queries
+    public int GetCountFromQuery(string query)
+    {
+        int count = 0;
+
+        try
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    count = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error executing count query: " + ex.Message);
+        }
+
+        return count;
+    }
+
+
+
+
+
+
+
 }

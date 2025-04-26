@@ -15,6 +15,13 @@
     <None Remove="Chat Bubble.png" />
     <None Remove="Coin in Hand.png" />
     <None Remove="Combo Chart.png" />
+    <None Remove="doctor1.jpg" />
+    <None Remove="doctor2.jpg" />
+    <None Remove="doctor3.jpg" />
+    <None Remove="doctor4.jpg" />
+    <None Remove="doctor5.jpg" />
+    <None Remove="doctor6.jpg" />
+    <None Remove="doctor7.jpg" />
     <None Remove="Group 1.png" />
     <None Remove="Info.png" />
     <None Remove="medical-assistance.png" />
@@ -29,6 +36,13 @@
     <Resource Include="Chat Bubble.png" />
     <Resource Include="Coin in Hand.png" />
     <Resource Include="Combo Chart.png" />
+    <Resource Include="doctor1.jpg" />
+    <Resource Include="doctor2.jpg" />
+    <Resource Include="doctor3.jpg" />
+    <Resource Include="doctor4.jpg" />
+    <Resource Include="doctor5.jpg" />
+    <Resource Include="doctor6.jpg" />
+    <Resource Include="doctor7.jpg" />
     <Resource Include="Group 1.png" />
     <Resource Include="Info.png" />
     <Resource Include="medical-assistance.png" />

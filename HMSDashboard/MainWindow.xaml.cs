@@ -16,34 +16,6 @@ namespace HMSDashboard
             InitializeComponent();
         }
 
-        private void PatientListPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            isDragging = true;
-            clickPosition = e.GetPosition(MainCanvas);
-            PatientListPanel.CaptureMouse();
-        }
-
-        private void PatientListPanel_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                var currentPosition = e.GetPosition(MainCanvas);
-                double deltaX = currentPosition.X - clickPosition.X;
-                double deltaY = currentPosition.Y - clickPosition.Y;
-                double newLeft = Canvas.GetLeft(PatientListPanel) + deltaX;
-                double newTop = Canvas.GetTop(PatientListPanel) + deltaY;
-                Canvas.SetLeft(PatientListPanel, newLeft);
-                Canvas.SetTop(PatientListPanel, newTop);
-                clickPosition = currentPosition;
-            }
-        }
-
-        private void PatientListPanel_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            isDragging = false;
-            PatientListPanel.ReleaseMouseCapture();
-        }
-
         
         // payemet button click
         private void paymentClick(object sender, RoutedEventArgs e)
@@ -74,11 +46,11 @@ namespace HMSDashboard
         }
         
         
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+      /*  private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dbHelper db = new dbHelper();
             RecentPatientsDataGrid.ItemsSource = db.GetRecentPatients().DefaultView;
-        }
+        }*/
 
         private void DoctorClick(object sender, RoutedEventArgs e)
         {
@@ -103,8 +75,27 @@ namespace HMSDashboard
             loadin.Show();
            
         }
+
+
+
+
+
+        //On_Loaded funcrion
+        private void On_Loaded(object sender, RoutedEventArgs e)
+        {
+          
+            dbHelper getCount = new dbHelper();
+            appointmentCount.Text = $"0 {getCount.GetCountFromQuery("SELECT COUNT(*) FROM appointments WHERE appointmentDate >= CURDATE()")}";
+            docCount.Text = $"0 {getCount.GetCountFromQuery("SELECT COUNT(*) FROM doctors")}";
+            AdmittedPatientCount.Text = $"0 {getCount.GetCountFromQuery("SELECT COUNT(*) FROM patients WHERE Status = 'Admitted'")}";
+
+
+
+        }
+
+
     }
 
-   
+
 
 }
