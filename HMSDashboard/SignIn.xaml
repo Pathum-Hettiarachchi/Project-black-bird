@@ -10,18 +10,31 @@
         WindowStyle="None" 
         
         Width="764"
-        Height="492">
+        Height="543">
     <Grid x:Name="signInWindow" Margin="75,0,90,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="461*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
 
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="596*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="359*"/>
+                <RowDefinition Height="134*"/>
+            </Grid.RowDefinitions>
             <Border
                     Background="White"
                     CornerRadius="20"
                     Padding="30"
                     BorderBrush="#DDD"
-                    BorderThickness="1" Margin="10,16,10,10">
+                    BorderThickness="1" Margin="-74,16,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="762" Grid.ColumnSpan="2">
 
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="436" Width="526">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="448" Width="526">
 
                     <!-- Title -->
                     <TextBlock FontSize="30" TextAlignment="Center" FontWeight="Bold" Margin="0,20,0,30" Height="50">
