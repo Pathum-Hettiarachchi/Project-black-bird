@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:HMSDashboard"
         mc:Ignorable="d"
         Background="#FFF5F5F7"
-        Title="Appointments" Height="800" Width="1000">
+        Title="Appointments" Height="800" Width="1071"
+         WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+
+        
+        >
     <Canvas Margin="31,0,31,13">
         <!-- Sidebar -->
         <StackPanel Width="200" Height="704" Canvas.Left="0" Canvas.Top="0">
@@ -218,7 +223,7 @@
         </StackPanel>
 
         <!-- Profile Section -->
-        <Border Canvas.Left="753" Canvas.Top="20" Width="175" Height="50" Background="#F0F0F0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Border Canvas.Left="863" Canvas.Top="20" Width="175" Height="50" Background="#F0F0F0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <Ellipse Width="30" Height="30" Fill="Gray"/>
                 <StackPanel Margin="5,0,0,0">
@@ -251,22 +256,22 @@
 
         </Canvas>
 
-        <Border Canvas.Left="251" Canvas.Top="112" Width="616" Height="165" Background="White" CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Border Canvas.Left="295" Canvas.Top="112" Width="616" Height="165" Background="White" CornerRadius="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Canvas>
             <!-- NIC Label -->
             <Label Content="Doctor Name&#xA;"
-           Canvas.Left="284"
+           Canvas.Left="328"
            Canvas.Top="156"
            Foreground="Black"
            FontWeight="Bold"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Top" Height="26"/>
+           HorizontalAlignment="Left"
+           VerticalAlignment="Center" Height="26"/>
 
             <!-- NIC TextBox -->
             <TextBox x:Name="DocNameTextBox"
              Width="250"
              Height="36"
-             Canvas.Left="284"
+             Canvas.Left="328"
              Canvas.Top="182"
              Padding="10,5"
              Background="White"
@@ -274,8 +279,8 @@
              BorderThickness="1"
              FontSize="14"
              VerticalContentAlignment="Center"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Top">
+             HorizontalAlignment="Left"
+             VerticalAlignment="Center">
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}">
                         <Setter Property="Template">
@@ -295,7 +300,7 @@
             </TextBox>
 
             <!-- DatePicker -->
-            <DatePicker  x:Name="AppointmentDatePicker" Canvas.Left="571" Canvas.Top="185" HorizontalAlignment="Center" Height="26" VerticalAlignment="Top" Width="115"/>
+            <DatePicker  x:Name="AppointmentDatePicker" Canvas.Left="615" Canvas.Top="185" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="115"/>
 
 
             <!-- Buttons -->
@@ -303,14 +308,14 @@
             <Button Content="Find"
             Height="38"
             Width="99"
-            Canvas.Left="728"
+            Canvas.Left="772"
             Canvas.Top="177"
             Background="#FFBED3FF"
             BorderThickness="0"
             Cursor="Hand"
             FontWeight="Bold"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
             BorderBrush="Transparent"
             Padding="10,5"
              Click="findAppointment"

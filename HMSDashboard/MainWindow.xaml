@@ -6,10 +6,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="av"
     Title="HMS Dashboard"
-    Height="1000"
     Loaded="On_Loaded"
-    Width="1200"
-    Background="#FFF5F5F7">
+    Background="#FFF5F5F7"
+    WindowState="Maximized"
+    WindowStartupLocation="CenterScreen"
+    Width="Auto"
+    Height="Auto"
+    >
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Canvas x:Name="MainCanvas"  Height="1000" Width="1200">
 

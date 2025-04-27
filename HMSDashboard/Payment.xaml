@@ -7,7 +7,11 @@
         xmlns:sys="clr-namespace:System;assembly=System.Runtime"
         mc:Ignorable="d"
           Background="#FFF5F5F7"
-        Title="Payment"  Height="800" Width="1000">
+        Title="Payment"  Height="800" Width="1000"
+         WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+
+        >
 
 
     <Canvas Margin="31,0,31,13">
@@ -221,7 +225,7 @@
         </StackPanel>
 
         <!-- Profile Section -->
-        <Border Canvas.Left="753" Canvas.Top="20" Width="175" Height="50" Background="#F0F0F0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Border Canvas.Left="791" Canvas.Top="20" Width="175" Height="50" Background="#F0F0F0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <Ellipse Width="30" Height="30" Fill="Gray"/>
                 <StackPanel Margin="5,0,0,0">
@@ -254,11 +258,11 @@
 
         </Canvas>
 
-        <Border Canvas.Left="263" Canvas.Top="112" Width="594" Height="211" Background="White" CornerRadius="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Border Canvas.Left="281" Canvas.Top="112" Width="594" Height="211" Background="White" CornerRadius="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Canvas>
             <!-- NIC Label -->
             <Label Content="Doctor Name&#xA;"
-        Canvas.Left="342"
+        Canvas.Left="360"
         Canvas.Top="156"
         Foreground="Black"
         FontWeight="Bold"
@@ -269,7 +273,7 @@
             <TextBox x:Name="DocNameTextBox"
           Width="250"
           Height="36"
-          Canvas.Left="342"
+          Canvas.Left="360"
           Canvas.Top="182"
           Padding="10,5"
           Background="White"
@@ -298,14 +302,14 @@
             </TextBox>
 
             <!-- DatePicker -->
-            <DatePicker  x:Name="AppointmentDatePicker" Canvas.Left="629" Canvas.Top="185" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="115"  SelectedDate="{x:Static sys:DateTime.Today}"/>
+            <DatePicker  x:Name="AppointmentDatePicker" Canvas.Left="647" Canvas.Top="185" HorizontalAlignment="Left" Height="26" VerticalAlignment="Center" Width="115"  SelectedDate="{x:Static sys:DateTime.Today}"/>
 
 
 
             <!-- AppointmentDateTextBox -->
 
             <Label Content="Appointment No"
-Canvas.Left="385"
+Canvas.Left="403"
 Canvas.Top="226"
 Foreground="Black"
 FontWeight="Bold"
@@ -316,7 +320,7 @@ VerticalAlignment="Center" Height="26"/>
             <TextBox  x:Name="AppointmentNoTextBox"
   Width="142"
   Height="36"
-  Canvas.Left="385"
+  Canvas.Left="403"
   Canvas.Top="257"
   Padding="10,5"
   Background="White"
@@ -350,7 +354,7 @@ VerticalAlignment="Center" Height="26"/>
             <Button Content="Find"
          Height="38"
          Width="98"
-         Canvas.Left="588"
+         Canvas.Left="606"
          Canvas.Top="255"
          Background="#FFBED3FF"
          BorderThickness="0"

@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HMSDashboard"
         mc:Ignorable="d"
-        Title="SignUp" Height="450" Width="800">
+        Title="SignUp" 
+        WindowState="Maximized" 
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Width="Auto" 
+        Height="Auto">
     <Grid>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border Width="850"

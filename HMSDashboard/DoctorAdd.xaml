@@ -8,7 +8,10 @@
         Height="720"
         Width="1080"
         Background="#F7F7FA"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+    
+     >
 
     <Window.Resources>
         <!-- Rounded TextBox Style -->
