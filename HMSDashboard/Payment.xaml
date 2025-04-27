@@ -223,18 +223,11 @@
 
             </StackPanel>
         </StackPanel>
-
-        <!-- Profile Section -->
-        <Border Canvas.Left="791" Canvas.Top="20" Width="175" Height="50" Background="#F0F0F0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <Ellipse Width="30" Height="30" Fill="Gray"/>
-                <StackPanel Margin="5,0,0,0">
-                    <TextBlock Text="Pasindu Path.." FontWeight="Bold"/>
-                    <TextBlock Text="Admin" FontSize="10"/>
-                </StackPanel>
-            </StackPanel>
-        </Border>
-        <Canvas Height="51" Canvas.Top="260"/>
+        
+        <Canvas>
+            <local:UserCard Canvas.Left="757" Canvas.Top="22" />
+        </Canvas>
+   
 
 
 

@@ -12,6 +12,7 @@
     WindowStartupLocation="CenterScreen"
     Width="Auto"
     Height="Auto"
+    xmlns:local="clr-namespace:HMSDashboard"
     >
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Canvas x:Name="MainCanvas"  Height="1000" Width="1200">
@@ -538,6 +539,7 @@
             </StackPanel>
 
             <!-- Admin Info -->
+            <!--
             <Border Canvas.Left="929"
         Width="149" Height="54"
         Background="White" CornerRadius="20"
@@ -550,7 +552,10 @@
                         <TextBlock Text="Admin" FontSize="10"/>
                     </StackPanel>
                 </StackPanel>
-            </Border>
+            </Border>   -->
+            <Canvas>
+                <local:UserCard Canvas.Left="913" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="3" Height="58" Width="216" />
+            </Canvas>
 
 
 

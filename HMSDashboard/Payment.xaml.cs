@@ -249,6 +249,7 @@ namespace HMSDashboard
             appointment.Show();
             this.Close();
         }
+
     }
 
     // Appointment class to hold data for each appointment

@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="HMSDashboard.UserCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HMSDashboard"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="#F0F0F0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="210" Height="68" Margin="10,0,0,0">
+        <StackPanel Orientation="Vertical" Margin="10,7,10,5">
+            <!-- User Profile Image -->
+            <Grid Width="30" Height="30" Margin="-150 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="11*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Ellipse Fill="Gray" Stroke="Black" StrokeThickness="2" Grid.ColumnSpan="2"/>
+                <Image Source="/20180125_001_1_.jpg" Stretch="Fill" Width="30" Height="30" Grid.ColumnSpan="2">
+                    <Image.Clip>
+                        <EllipseGeometry Center="15,15" RadiusX="15" RadiusY="15"/>
+                    </Image.Clip>
+                </Image>
+            </Grid>
+
+            <!-- User Info -->
+            <StackPanel Margin="50,-30,10,0">
+                <TextBlock x:Name="UserNameTextBlock" Text="{Binding UserName}" FontWeight="Bold"/>
+                <TextBlock x:Name="UserRole" Text="Admin" FontSize="10"/>
+            </StackPanel>
+
+            <!-- Log Out Button, Centered and Styled -->
+            <Button Content="Log Out" 
+                    FontSize="10"
+                    Height="18" 
+                    Width="90" 
+                    Background="#FFBED3FF" 
+                    Foreground="Black" 
+                    FontWeight="Bold" 
+                    BorderBrush="#FFBED3FF"
+                    BorderThickness="1"
+                    HorizontalAlignment="Center"
+                    Margin="30,5,10,0"
+                    Click="Button_Click"/>
+        </StackPanel>
+    </Border>
+</UserControl>

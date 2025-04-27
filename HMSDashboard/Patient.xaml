@@ -8,6 +8,7 @@
         Title="Patient Dashboard"
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
+        xmlns:local="clr-namespace:HMSDashboard"
          Height="800" Width="1200">
 
 
@@ -329,15 +330,9 @@
         </StackPanel>
 
         <!-- Profile Section -->
-        <Border Canvas.Left="949" Canvas.Top="36" Width="175" Height="50" Background="#F0F0F0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <Ellipse Width="30" Height="30" Fill="Gray"/>
-                <StackPanel Margin="5,0,0,0">
-                    <TextBlock Text="Pasindu Path.." FontWeight="Bold"/>
-                    <TextBlock Text="Admin" FontSize="10"/>
-                </StackPanel>
-            </StackPanel>
-        </Border>
+        <Canvas>
+            <local:UserCard Canvas.Left="920" Canvas.Top="19" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        </Canvas>
         <Canvas Height="51" Canvas.Top="260"/>
 
 
