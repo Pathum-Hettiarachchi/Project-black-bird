@@ -6,24 +6,25 @@
         xmlns:local="clr-namespace:HMSDashboard"
         mc:Ignorable="d"
         Title="SignIn"
-        WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
-        Width="Auto"
-        Height="Auto">
-    <Grid x:Name="signInWindow">
+        WindowStyle="None" 
+        
+        Width="764"
+        Height="492">
+    <Grid x:Name="signInWindow" Margin="75,0,90,0">
 
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border Width="850"
+            <Border
                     Background="White"
                     CornerRadius="20"
                     Padding="30"
                     BorderBrush="#DDD"
-                    BorderThickness="1">
+                    BorderThickness="1" Margin="10,16,10,10">
 
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="436" Width="526">
 
                     <!-- Title -->
-                    <TextBlock FontSize="30" TextAlignment="Center" FontWeight="Bold" Margin="0,0,0,30">
+                    <TextBlock FontSize="30" TextAlignment="Center" FontWeight="Bold" Margin="0,20,0,30" Height="50">
                         <Run Text="Sign " Foreground="#7F7F7F"/>
                         <Run Text="In" Foreground="#FFBED3FF"/>
                     </TextBlock>
@@ -71,23 +72,21 @@
                                          VerticalContentAlignment="Center"/>
                         </Border>
                     </StackPanel>
-
-                    <!-- Login Button -->
                     <Button Content="Login" 
                             Height="45"  
-                            Width="200" 
-                            HorizontalAlignment="Center"
+                            Width="200"
                             Background="#FFBED3FF" 
                             Foreground="Black"  
                             BorderBrush="#FFBED3FF"  
                             BorderThickness="1"  
                             FontSize="18" 
                             Cursor="Hand"
-                            Margin="0,0,0,10"
                             Click="LoginButton_Click"/>
 
+                    <!-- Login Button -->
+
                     <!-- Don't have an account? Sign Up -->
-                    <TextBlock HorizontalAlignment="Center" FontSize="14" Foreground="#7F7F7F">
+                    <TextBlock HorizontalAlignment="Center" FontSize="14" Foreground="#7F7F7F" Height="26" RenderTransformOrigin="0.507,0.88">
                         <Run Text="Don't have an account? "/>
                         <Hyperlink Click="SignUpHyperlink_Click" Foreground="#00EEC6" TextDecorations="Underline" Cursor="Hand">Sign Up</Hyperlink>
                     </TextBlock>

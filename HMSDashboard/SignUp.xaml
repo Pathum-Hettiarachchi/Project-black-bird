@@ -6,19 +6,20 @@
         xmlns:local="clr-namespace:HMSDashboard"
         mc:Ignorable="d"
         Title="SignUp" 
-        WindowState="Maximized" 
-        WindowStyle="None"
-        WindowStartupLocation="CenterScreen"
-        Width="Auto" 
-        Height="Auto">
+        
+           WindowStartupLocation="CenterScreen"
+      WindowStyle="None" 
+      
+      Width="764"
+      Height="600">
     <Grid>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border Width="850"
+            <Border
                     Background="White"
                     CornerRadius="20"
                     Padding="30"
                     BorderBrush="#DDD"
-                    BorderThickness="1">
+                    BorderThickness="1" Margin="10,10,10,10">
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock FontSize="30" TextAlignment="Center" FontWeight="Bold" Margin="0,0,0,30">
