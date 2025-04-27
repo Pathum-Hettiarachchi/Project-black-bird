@@ -54,15 +54,19 @@ namespace HMSDashboard
             if (passwordValue != rePasswordValue)
             {
                 MessageBox.Show("Passwords do not match.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+                
             }
 
             DatabaseHelper db = new DatabaseHelper();
             string hashedPassword = PasswordHelper.HashPassword(passwordValue);
-            db.InsertUser(emailValue, selectedRole, hashedPassword);
-           // MessageBox.Show("Registration Successful");
+
+            bool isSuccess = db.InsertUser(emailValue, selectedRole, hashedPassword);
+            // MessageBox.Show("Registration Successful");
+            if (isSuccess) {
             new MainWindow().Show();
             this.Close();
+            }
+
 
         }
 

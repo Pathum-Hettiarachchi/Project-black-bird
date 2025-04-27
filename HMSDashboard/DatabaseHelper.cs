@@ -3,6 +3,7 @@ using System.Windows;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 using System.Text;
+using HMSDashboard;
 
 public static class PasswordHelper
 {
@@ -29,13 +30,13 @@ public static class PasswordHelper
 public class DatabaseHelper
 {
     private string connectionString = "server=localhost;database=hsm;uid=root;pwd=;";
-    
-    
+
+
     // Register User
-    
-    
-    
-    public void InsertUser(string email, string role, string password)
+
+
+
+    public bool InsertUser(string email, string role, string password)
     {
         try
         {
@@ -52,7 +53,8 @@ public class DatabaseHelper
 
                 if (userExists > 0)
                 {
-                    MessageBox.Show("User already exists.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("User already exists.", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false; // ? Stop and return false
                 }
                 else
                 {
@@ -63,19 +65,29 @@ public class DatabaseHelper
                     insertCmd.Parameters.AddWithValue("@Role", role);
                     insertCmd.Parameters.AddWithValue("@Password", password);
 
-                    insertCmd.ExecuteNonQuery();
+                    int rowsAffected = insertCmd.ExecuteNonQuery();
 
-                    MessageBox.Show("User registered successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("User registered successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        return true; // ? Success
+                    }
+                    else
+                    {
+                        MessageBox.Show("User registration failed.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return false; // ? Failed
+                    }
                 }
             }
         }
         catch (Exception ex)
         {
-          
-            MessageBox.Show($" Error: {ex.Message}", "Database Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            return false; // ? Error occurred
         }
     }
-// login user handler
+
+    // login user handler
 
 
 
