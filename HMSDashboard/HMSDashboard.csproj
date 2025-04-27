@@ -23,6 +23,7 @@
     <None Remove="doctor6.jpg" />
     <None Remove="doctor7.jpg" />
     <None Remove="Group 1.png" />
+    <None Remove="Group 21.png" />
     <None Remove="Info.png" />
     <None Remove="medical-assistance.png" />
     <None Remove="Sell Stock.png" />
@@ -44,6 +45,7 @@
     <Resource Include="doctor6.jpg" />
     <Resource Include="doctor7.jpg" />
     <Resource Include="Group 1.png" />
+    <Resource Include="Group 21.png" />
     <Resource Include="Info.png" />
     <Resource Include="medical-assistance.png" />
     <Resource Include="Sell Stock.png" />
