@@ -117,7 +117,7 @@ namespace HMSDashboard
             openMainTimer.Tick += (s2, e2) =>
             {
                 openMainTimer.Stop();
-                new MainWindow().Show();
+                new SignIn().Show();
                 this.Close();
             };
             openMainTimer.Start();
