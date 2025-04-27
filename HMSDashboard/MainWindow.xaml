@@ -15,7 +15,10 @@
 
             <!-- Sidebar -->
 
-            <Border Canvas.Left="246" Canvas.Top="65" Width="888" Height="405" Background="White" CornerRadius="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <!-- Sidebar -->
+
+            <Border Canvas.Left="246" Canvas.Top="65" Width="888" Height="521" Background="White" CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock TextWrapping="Wrap" Text="Hospital Overview" Canvas.Left="332" Canvas.Top="95" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF323438"/>
 
             <!-- Sidebar -->
             <StackPanel Background="#FFF5F5F7"
@@ -244,28 +247,27 @@
                 </StackPanel>
             </StackPanel>
 
-            <!-- Top Bar -->
-
             <!-- Overview Section -->
-            <StackPanel Orientation="Horizontal" Canvas.Left="332" Canvas.Top="80" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Border Background="#E1E6F9" Width="200" Height="100" Margin="10" CornerRadius="10">
-                    <StackPanel Margin="21,30,52,16">
+            <StackPanel Orientation="Horizontal" Canvas.Left="332" Canvas.Top="114" HorizontalAlignment="Center" VerticalAlignment="Top" Height="165">
+                <Border Background="#E1E6F9" Width="200" Height="116" Margin="10" CornerRadius="10">
+                    <StackPanel Margin="20,47,32,10">
                         <TextBlock x:Name="AdmittedPatientCount" Text="" FontSize="20" FontWeight="Bold"/>
-                        <TextBlock Text="Admitted Patients" FontSize="12"/>
+                        <TextBlock Text="Admitted Patients" FontSize="18"/>
                     </StackPanel>
                 </Border>
-                <Border Background="#E2F0EA" Width="200" Height="100" Margin="10" CornerRadius="10">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Border Background="#E2F0EA" Width="200" Height="116" Margin="10" CornerRadius="10">
+                    <StackPanel Margin="20,42,62,10">
                         <TextBlock x:Name="docCount" Text="" FontSize="20" FontWeight="Bold"/>
-                        <TextBlock Text="Active Doctors" FontSize="12"/>
+                        <TextBlock Text="Active Doctors" FontSize="18"/>
                     </StackPanel>
                 </Border>
-                <Border Background="#F0EAD2" Width="200" Height="100" Margin="10" CornerRadius="10">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock x:Name="appointmentCount" Text="201" FontSize="20" FontWeight="Bold"/>
-                        <TextBlock Text="Appointments" FontSize="12"/>
+                <Border Background="#F0EAD2" Width="200" Height="116" Margin="10" CornerRadius="10">
+                    <StackPanel HorizontalAlignment="Left" Margin="20,36,0,21" Width="125">
+                        <TextBlock x:Name="appointmentCount" FontSize="20" FontWeight="Bold"/>
+                        <TextBlock Text="Appointments" FontSize="18"/>
                     </StackPanel>
                 </Border>
+                <Image Height="100" Width="100"/>
             </StackPanel>
 
 
@@ -278,15 +280,15 @@
 
 
             <!-- Today's Doctors Section -->
-            <StackPanel Canvas.Left="328" Canvas.Top="200" VerticalAlignment="Center" HorizontalAlignment="Left" Width="689">
-                <TextBlock Text="Today's Doctors" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
-                <StackPanel Orientation="Horizontal" Width="735" Height="174">
+            <StackPanel Canvas.Left="332" Canvas.Top="284" VerticalAlignment="Top" HorizontalAlignment="Center" Width="689">
+                <TextBlock Text="Today's Active Doctors" FontSize="18" Margin="0,0,0,10" Height="25" FontWeight="Bold" Foreground="#FF323438"/>
+                <StackPanel Orientation="Horizontal" Width="735" Height="228">
 
 
 
-                    <Border Background="White"
+                    <Border Background="#FFDADEFF"
         Width="150"
-        Height="147"
+        Height="170"
         Margin="10"
         CornerRadius="30">
                         <Border.Effect>
@@ -299,21 +301,28 @@
                             <!-- Doctor Name -->
                             <TextBlock
                    TextAlignment="Center"
-                   FontSize="12"
-                   VerticalAlignment="Bottom"
+                   FontSize="14"
+                   VerticalAlignment="Top"
                    HorizontalAlignment="Center"
                    Width="120"
-                   Margin="0,0,0,10"
-                   TextWrapping="Wrap"><Run Text="Dr. Nuwan Perera"/><LineBreak/><Run Text="  (Neurologist)"/></TextBlock>
+                   Margin="0,123,0,0"
+                   TextWrapping="Wrap" Height="22"><Run Text="Dr. Nuwan Perera"/><LineBreak/><Run Text="  "/></TextBlock>
+                            <TextBlock
+                                TextAlignment="Center"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Width="120"
+                                Margin="0,142,0,0"
+                                TextWrapping="Wrap" Height="22" Foreground="#FF525151"><Run Text="(Neutrologist)"/><LineBreak/><Run Text="  "/></TextBlock>
                         </Grid>
                     </Border>
 
 
 
 
-                    <Border Background="White"
+                    <Border Background="#FFDADEFF"
         Width="150"
-        Height="147"
+        Height="170"
         Margin="10"
         CornerRadius="30">
                         <Border.Effect>
@@ -324,14 +333,15 @@
 
 
                             <!-- Doctor Name -->
-                            <TextBlock Text="Dr. Ayesha Fernando(Cardiology)"
+                            <TextBlock Text="Dr. Ayesha Fernando"
                    TextAlignment="Center"
-                   FontSize="12"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Center"
-                   Width="120"
-                   Margin="0,0,0,10"
+                   FontSize="14"
+                   Margin="0,122,0,30"
                    TextWrapping="Wrap"/>
+                            <TextBlock Text="(Cardiology)"
+                                TextAlignment="Center"
+                                Margin="0,141,0,11"
+                                TextWrapping="Wrap" Foreground="#FF525151"/>
                         </Grid>
                     </Border>
 
@@ -341,9 +351,9 @@
 
 
 
-                    <Border Background="White"
+                    <Border Background="#FFDADEFF"
         Width="150"
-        Height="147"
+        Height="170"
         Margin="10"
         CornerRadius="30">
                         <Border.Effect>
@@ -354,14 +364,21 @@
 
 
                             <!-- Doctor Name -->
-                            <TextBlock Text="Dr. Harsha Gunawardena(General Surgeon &#x9;)"
+                            <TextBlock Text="Dr. Harsha Gunawa..."
                    TextAlignment="Center"
-                   FontSize="12"
+                   FontSize="14"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Center"
                    Width="150"
-                   Margin="0,105,0,0"
+                   Margin="0,122,0,0"
                    TextWrapping="Wrap"/>
+                            <TextBlock Text="(general Surgeon)"
+                                TextAlignment="Center"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Width="150"
+                                Margin="0,141,0,0"
+                                TextWrapping="Wrap" Foreground="#FF525151"/>
                         </Grid>
                     </Border>
 
@@ -371,9 +388,9 @@
 
 
 
-                    <Border Background="White"
+                    <Border Background="#FFDADEFF"
         Width="150"
-        Height="147"
+        Height="170"
         Margin="10"
         CornerRadius="30">
                         <Border.Effect>
@@ -384,14 +401,21 @@
 
 
                             <!-- Doctor Name -->
-                            <TextBlock Text="Dr. Tharindu Silva(Dermatologist)"
+                            <TextBlock Text="Dr. Tharindu Silva"
                    TextAlignment="Center"
-                   FontSize="12"
-                   VerticalAlignment="Bottom"
+                   FontSize="14"
+                   VerticalAlignment="Top"
                    HorizontalAlignment="Center"
                    Width="120"
-                   Margin="0,0,0,10"
+                   Margin="0,124,0,0"
                    TextWrapping="Wrap"/>
+                            <TextBlock Text="(Pediatrics)"
+                                TextAlignment="Center"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Width="120"
+                                Margin="0,141,0,0"
+                                TextWrapping="Wrap" Foreground="#FF525151"/>
                         </Grid>
                     </Border>
 
@@ -400,7 +424,7 @@
 
             <Canvas>
                 <!-- Ellipse with Image inside it -->
-                <Ellipse Height="90" Width="92" Stroke="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="370" Canvas.Top="257">
+                <Ellipse Height="90" Width="92" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="370" Canvas.Top="357">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="/doctor1.jpg" Stretch="Fill"/>
                     </Ellipse.Fill>
@@ -408,7 +432,7 @@
             </Canvas>
             <Canvas>
                 <!-- Ellipse with Image inside it -->
-                <Ellipse Height="90" Width="92" Stroke="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="708" Canvas.Top="252">
+                <Ellipse Height="90" Width="92" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="713" Canvas.Top="358">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="/doctor4.jpg" Stretch="Fill"/>
                     </Ellipse.Fill>
@@ -416,7 +440,7 @@
             </Canvas>
             <Canvas>
                 <!-- Ellipse with Image inside it -->
-                <Ellipse Height="90" Width="92" Stroke="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="538" Canvas.Top="253">
+                <Ellipse Height="90" Width="92" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="544" Canvas.Top="357">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="/doctor3.jpg" Stretch="Fill"/>
                     </Ellipse.Fill>
@@ -424,7 +448,7 @@
             </Canvas>
             <Canvas>
                 <!-- Ellipse with Image inside it -->
-                <Ellipse Height="90" Width="92" Stroke="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="880" Canvas.Top="253">
+                <Ellipse Height="90" Width="92" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="885" Canvas.Top="360">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="/doctor5.jpg" Stretch="Fill"/>
                     </Ellipse.Fill>
@@ -439,11 +463,11 @@
 
             <!-- Patient List -->
             <StackPanel x:Name="PatientListPanel"
-            Canvas.Left="252"
-            Canvas.Top="496"
-            HorizontalAlignment="Left"
+            Canvas.Left="246"
+            Canvas.Top="621"
+            HorizontalAlignment="Center"
             Height="264"
-            VerticalAlignment="Center">
+            VerticalAlignment="Top" Width="888">
                 <Border Width="888" Height="263" Background="White" CornerRadius="40">
                     <StackPanel Margin="20" Background="White">
                         <!-- Heading -->
@@ -454,7 +478,7 @@
                        Margin="0,0,0,10"/>
 
                         <!-- Paragraph under heading -->
-                        <TextBlock Text="recent patients."
+                        <TextBlock Text="Quickly find details of recently added or admitted patients here"
                        FontSize="14"
                        Foreground="Black"
                        TextWrapping="Wrap"
