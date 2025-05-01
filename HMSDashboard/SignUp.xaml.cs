@@ -54,6 +54,7 @@ namespace HMSDashboard
             if (passwordValue != rePasswordValue)
             {
                 MessageBox.Show("Passwords do not match.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
                 
             }
 
