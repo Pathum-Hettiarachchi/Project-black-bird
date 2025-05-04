@@ -34,6 +34,8 @@ A brief description of what your application does.
 1. Clone the repository
 2. Configure your database
     * connectionString="server=localhost;database=hsm;uid=root;pwd=;"
+    * Create Datbase Name = "hsm" and download and import following database file From Url
+        https://drive.google.com/drive/folders/1FPTPf9IHStzpjTMkbnhMcJAOJc5rVb38?usp=sharing
 3. Run HMSDashboard.exe File in HMS Folder
 5. Run the project
 
