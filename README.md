@@ -1,11 +1,6 @@
-# Project Name
-
-A brief description of what your application does.
 
 ## Features
 - Add and manage doctors/patients
-- Image upload and database saving
-- NIC validation and DOB-based age calculation
 - Patient admission/discharge
 - Payment For Appointment
 
